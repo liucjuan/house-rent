@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Document */
+.Sub_gsjj{
+clear:both;
+width:659px;
+height:auto;
+padding-top:12px;
+padding-left:14px;
+padding-right:14px;
+line-height:24px;
+text-indent:2em;
+color:#000000;
+}
+.Sub_gsjj h6{
+text-align:center;
+font-size:14px;
+font-weight:bold;
+color:#000000;
+}
+/*产品展示*/
+.productsBox {
+clear:both;
+	width:687px;
+	padding-top:12px;
+	height:auto;
+	padding-bottom:15px;
+}
+.SproLxt {
+	clear:both;
+	width:687px;
+	height:164px;
+	margin-top:10px;
+}
+.SproList01 {
+	width:149px;
+	height:160px;
+	float:left;
+	padding-left:11px;
+	padding-right:10px;
+}
+.Spro_pic {
+	width:145px;
+	height:133px;
+	padding:1px;
+	border:1px solid #cccccc;
+}
+.Spro_tip {
+	width:149px;
+	height:17px;
+	text-align:center;
+	padding-top:8px;
+	color:#000000;
+	font-size:12px;
+}
+.Spro_tip a {
+	color:#000000;
+	font-size:12px;
+	text-decoration:none;
+}
+.Spro_tip a:hover {
+	color:#ff0000;
+	font-size:12px;
+	text-decoration:none;
+}
+.pages {
+clear:both;
+	width:650px;
+	height:22px;
+	text-align:center;
+	font-size:12px;
+	padding-top:15px;
+}
+.pages a {
+	color:#000000;
+	text-decoration:none;
+}
+.pages a:hover, .Pcurrent {
+	color:#ff0000;
+	text-decoration:none;
+}
+/*产品展示详细页*/
+.cpPic {
+	padding-top:12px;
+	width:687px;
+	height:280px;
+	text-align:center;
+}
+.cpPic h6 {
+width:680px;
+border-bottom:2px solid #cc9900;
+	text-align:center;
+	height:24px;
+	font-size:14px;
+	margin-bottom:15px;
+	color:#3366FF;
+}
+.cpSmg {
+	width:647px;
+	height:auto;
+	margin-top:15px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:20px;
+	color:#000000;
+	text-align:left;
+	line-height:22px;
+}
+/*新闻列表*/
+.newLxt0 {
+	clear:both;
+	width:670px;
+	padding-left:10px;
+	padding-right:7px;
+	height:auto;
+	margin-top:8px;
+}
+.newLxt {
+	width:670px;
+	height:auto;
+	margin-left:0px;
+	padding-left:0px;
+	list-style-type:none;
+}
+.newLxt li {
+	width:670px;
+	height:25px;
+	border-bottom:1px dashed #cccccc;
+	text-align:left;
+	padding-left:0px;
+	margin-left:0px;
+}
+.no {
+	display:block;
+	float:left;
+	width:530px;
+	height:18px;
+	text-align:left;
+	padding-left:15px;
+	padding-top:7px;
+	color:#666666;
+	background:url(../images/icon1.gif) no-repeat;
+	background-position:0px 8px;
+}
+.lxtDate {
+	display:block;
+	width:82px;
+	float:right;
+	height:17px;
+	text-align:right;
+	padding-right:8px;
+	padding-top:8px;
+	color:#666666;
+}
+.no a, .lxtDate a {
+	color:#000000;
+	text-decoration:none;
+}
+.no a:hover, .lxtDate a:hover {
+	color:#ff0000;
+	text-decoration:none;
+}
+/*新闻详细页*/
+.newsD_title, .newsD_bt {
+	font-family: "宋体", Simsun;
+	width:670px;
+	height:20px;
+	text-align:left;
+	color:#000000;
+	font-size:12px;
+	padding-left:10px;
+	padding-top:8px;
+}
+.newsD_title {
+	font-weight:bold;
+	border-bottom:1px solid #cccccc;
+}
+.newD_cont {
+	width:660px;
+	height:auto;
+	color:#000000;
+	line-height:24px;
+	text-indent:2em;
+	text-align:left;
+	padding-left:10px;
+	padding-right:7px;
+	padding-top:15px;
+	margin-bottom:15px;
+}
+.newsD_bt a {
+	color:#000000;
+	text-decoration:none;
+}
+.newsD_bt a:hover {
+	color:#ff0000;
+	text-decoration:underline;
+}
+/*人才招聘*/
+.black{font-weight:bold;}
+.color01{
+color:#CC9900;
+}
+.color01 a{
+color:#CC9900;
+text-decoration:none;
+}
+.color01 a:hover{
+color:#FF0000;
+text-decoration:underline;
+}
+/*人才招聘详细页*/
+.rczpCnt1{
+width:668px;
+height:auto;
+padding-left:10px;
+padding-top:10px;
+color:#666666;
+font-size:12px;
+line-height:22px;
+}
+.rczp2Title{
+margin-top:12px;
+width:668px;
+height:17px;
+color:#666666;
+font-size:12px;
+font-weight:bold;
+padding-left:10px;
+padding-top:10px;
+border-bottom:1px solid #cc9900;
+}
+.contact_cnt{
+width:650px;
+height:380px;
+padding-top:30px;
+line-height:24px;
+color:#000000;
+background:url(../images/Contact-Us.jpg) no-repeat;
+background-position:250px -10px;}
+
+.color05{
+color:#000000;
+font-size:14px;
+font-weight:bold;
+}
+/*联系我们*/
+.contact{
+clear:both;
+padding-top:30px;
+width:680px;
+height:288px;
+}
+.contactPic{
+margin-left:20px;
+width:208px;
+height:290px;
+float:left;
+text-align:left;
+}
+.contactTip{
+padding-left:20px;
+width:430px;
+float:right;
+height:290px;
+color:#666666;
+font-size:12px;
+text-align:left;
+line-height:24px;
+}
+.Rfont{
+color:#cc0000;
+font-size:14px;
+font-weight:bold;
+}
+
