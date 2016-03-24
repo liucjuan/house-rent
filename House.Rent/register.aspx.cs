@@ -16,31 +16,6 @@ public partial class login : System.Web.UI.Page
 
     }
 
-    #region 登录
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        string user = CommonLib.CutString.UrnHtml(login_user.Text.Trim());
-        string pwd = login_pwd.Text;
-        string sql = "select count(*) from member where m_name='" + user
-            + "' and m_pwd='" + pwd + "'";
-        string con = CommonLib.SqlHelper.SqlConnectionString;
-        int count = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
-        if (count > 0)
-        {
-            HttpCookie cookies = Request.Cookies["buy"];
-            cookies = new HttpCookie("buy");
-            Session["uid"] = user;
-            cookies.Values.Add("user", HttpUtility.UrlEncode(user));
-            cookies.Expires = DateTime.Now.AddHours(24);//1天有效24小时 
-            Response.Cookies.Set(cookies);//存储！～ 
-            Response.Redirect("member_index.aspx");
-        }
-        else
-        {
-            CommonLib.JavaScriptHelper.Alert("您输入的用户名或密码错误", Page);
-        }
-    }
-    #endregion
     #region 注册
     protected void Button2_Click(object sender, EventArgs e)
     {

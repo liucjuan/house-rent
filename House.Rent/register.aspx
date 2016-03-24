@@ -66,44 +66,6 @@
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
             <div id="content">
-                <div class="login_l">
-                    <div class="login_t">
-                        登录</div>
-                    <div class="login_cont">
-                        <table width="100%">
-                            <tr>
-                                <td width="100" align="right" height="30">
-                                    用户名：
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="login_user" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
-                                </td>
-                                <td width="170">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="100" align="right" height="30">
-                                    密码：
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="login_pwd" runat="server" CssClass="login_txt" TextMode="Password" MaxLength="20"></asp:TextBox>
-                                </td>
-                                <td width="170">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="100" align="right" height="30">
-                                    
-                                </td>
-                                <td>
-                                    <asp:Button ID="Button1" runat="server" Text="登录" OnClientClick="javascript:return l();" OnClick="Button1_Click" />
-                                </td>
-                                <td width="170">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
                 <div class="login_r">
                     <div class="login_t">
                         注册</div>
