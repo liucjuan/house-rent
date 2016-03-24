@@ -45,7 +45,7 @@ namespace CommonLib
             {
                 try
                 {
-                    if (fileUpload.PostedFile.ContentLength < fileSize * 1024)
+                    if (fileUpload.PostedFile.ContentLength < fileSize * 1024 * 10)
                     {
                         string filename = Guid.NewGuid().ToString("N");
                         fileUpload.PostedFile.SaveAs(filePath + filename + fileExtension);
