@@ -56,4 +56,3 @@
         location.href = "supply.aspx" + str;
     }
 </script>
-
