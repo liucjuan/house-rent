@@ -1,5 +1,13 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+
+html{
+	background: #e9ecf1;
+}
+* {
+	margin:0 auto;
+	font-size: 14px;
+}
 a
 {
 	color:#249EF9;
@@ -10,12 +18,12 @@ a:hover
 	color:#ff0000;
 	text-decoration:none;
 }
-* {
-	margin:0 auto;
-	font-size:12px;
-}
 body {
-	background:#cc9933;
+	font-family: "Microsoft Yahei";
+	color: #333;
+}
+input{
+	font-size: 14px;
 }
 #container {
 	width:958px;
@@ -25,12 +33,13 @@ body {
 #top {
 	width:928px;
 	height:20px;
-	background:url(../images/top_bg.gif) no-repeat;
 	padding-top:7px;
 	text-align:right;
 	font-family: "宋体", Simsun;
 	padding-right:22px;
 	color:#ffffff;
+	background: #fafafa;
+	border-bottom: 1px solid #f1f1f1;
 }
 #top a {
 	color:#ffffff;
@@ -60,12 +69,10 @@ body {
 	width:929px;
 	padding-left:21px;
 	height:39px;
-	background:url(../images/navBg.gif) no-repeat;
 }
 .menu {
 	margin-left:0px;
 	padding-left:0px;
-	width:773px;
 	height:38px;
 	float:left;
 	padding-top:1px;
@@ -100,10 +107,9 @@ body {
 	color:#ffffff;
 	font-size:14px;
 	text-decoration:none;
-	background:url(../images/navHover.gif) no-repeat;
 }
 .date {
-	width:128px;
+	width:150px;
 	height:26px;
 	padding-right:20px;
 	float:right;

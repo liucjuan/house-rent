@@ -344,6 +344,11 @@
 }
 .login_txt
 {
-	border:1px solid #cccccc;
-	width:150px;
+	border:1px solid rgb(221, 221, 221);
+	width: 218px;
+	background: #fff;
+	color: #333;
+	padding: 6px 0 5px 5px;
+	font-family: "Microsoft Yahei";
+	border-radius: 5px;
 }

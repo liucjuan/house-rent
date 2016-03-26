@@ -1,26 +1,27 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="top.ascx.cs" Inherits="controls_top" %>
+
 <div id="top">
-    <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">
-        设为首页&nbsp;|&nbsp;</a><a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏&nbsp;|&nbsp;</a>
+    <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">设为首页&nbsp;|&nbsp;</a><a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏&nbsp;|&nbsp;</a>
     <%if (Request.Cookies["buy"] != null)
       {%>
       欢迎，<%=HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]) %>&nbsp;&nbsp;<a href="member_index.aspx">会员中心</a>&nbsp;&nbsp;<asp:LinkButton
           ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
     <%}
-        else
-        { %>
+      else
+      { %>
     <a href="login.aspx">登录&nbsp;|&nbsp;</a><a href="login.aspx">注册</a>
     <%} %>
 </div>
+
 <div id="nav">
     <ul class="menu">
         <li><a href="index.aspx">网站首页</a></li>
         <li><a href="supply.aspx?cls=1">出租房源</a></li>
         <li><a href="ly.aspx?cls=2">在线留言</a></li>
-       
+
         <li><a href="supply.aspx?cls=4">预租房源</a></li>
-       
-         <li><a href="supply.aspx?cls=3">站内新闻</a></li>
+
+        <li><a href="supply.aspx?cls=3">站内新闻</a></li>
     </ul>
     <div class="date">
 
@@ -28,6 +29,7 @@
 
     </div>
 </div>
+
 <%--<div class="Pro_search">
     <div class="ProSbox">
         <div class="www_zzjs_net">
@@ -42,12 +44,11 @@
 </div>--%>
 
 <script type="text/javascript">
-function s()
-{
-    var txt=document.getElementById("key");
-    var str="";
-    str=txt.value==""||txt.value=="- 请输入您要查询的产品名称 -"?"":"?key="+escape(txt.value);
-    location.href="supply.aspx"+str;
-}
+    function s() {
+        var txt = document.getElementById("key");
+        var str = "";
+        str = txt.value == "" || txt.value == "- 请输入您要查询的产品名称 -" ? "" : "?key=" + escape(txt.value);
+        location.href = "supply.aspx" + str;
+    }
 </script>
 
