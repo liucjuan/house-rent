@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="top.ascx.cs" Inherits="controls_top" %>
 
-<div id="top">
+<div id="top" class="top">
     <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">设为首页&nbsp;|&nbsp;</a><a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏&nbsp;|&nbsp;</a>
     <%if (Request.Cookies["buy"] != null)
       {%>
