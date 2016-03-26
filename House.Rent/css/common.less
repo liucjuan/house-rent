@@ -1,22 +1,17 @@
 ﻿@charset "utf-8";
 /* CSS Document */
-
-html{
-	background: #e9ecf1;
-}
-* {
-	margin:0 auto;
+*{
+	margin: 0;
+	padding: 0;
 	font-size: 14px;
 }
-a
-{
-	color:#249EF9;
-	text-decoration:none;
+a {
+	color: #666;
+	text-decoration: none;
 }
-a:hover
-{
-	color:#ff0000;
-	text-decoration:none;
+a:hover {
+	color: #ff7800;
+	text-decoration: none;
 }
 body {
 	font-family: "Microsoft Yahei";
@@ -25,31 +20,38 @@ body {
 input{
 	font-size: 14px;
 }
-#container {
-	width:958px;
-	height:auto;
-	overflow:hidden;
+.container {
+
 }
 .top {
-	width:928px;
-	height:20px;
-	padding-top:7px;
-	text-align:right;
-	font-family: "宋体", Simsun;
-	padding-right:22px;
-	color:#ffffff;
-	background: #fafafa;
-	border-bottom: 1px solid #f1f1f1;
 
-  a {
-	color:#ffffff;
-	text-decoration:none;
+	.top_cont {
+		width: 1000px;
+		margin: 0px auto;
+		text-align:right;
+		height:22px;
+		padding-top:6px;
+		font-family: "宋体", Simsun;
+		padding-right:22px;
+		color:#ffffff;
+		background: #fafafa;
+		border-bottom: 1px solid #f1f1f1;
+	}
 
-  }
-  a:hover {
-	color:#000000;
-	text-decoration:none;
-  }
+
+	a {
+		font-size: 12px;
+		text-decoration:none;
+		padding: 0px 10px;
+		&:not(:last-child){
+			border-right: 1px solid #333;
+		}
+	}
+
+	a:hover {
+		color:#ff7800;
+		text-decoration:none;
+	}
 }
 /*广告图片*/
 .banner {
@@ -67,58 +69,66 @@ input{
 	top: 10px;
 }
 /*导航*/
-#nav {
-	width:929px;
-	padding-left:21px;
-	height:39px;
+.nav {
+	background: #e8400d;
+	background: #fc6e2b;
+	.nav_cont{
+		width: 1000px;
+		height:40px;
+		margin: 0px auto;
+	}
+
+	.menu {
+		margin-left:0px;
+		padding-left:0px;
+		float:left;
+		list-style-type:none;
+		li {
+			width:115px;
+			float:left;
+			height:40px;
+			padding-right:11px;
+
+			&:hover{
+				background: #e8400d;
+				background: #FFFFFF;
+				color: #e8400d;
+
+				a{
+					color: #e8400d;
+				}
+			}
+
+			a {
+				display:block;
+				color: #FFFFFF;
+				width:115px;
+				height:26px;
+				background:none;
+				text-align:center;
+				padding-top:10px;
+				font-size:14px;
+				text-decoration:none;
+			}
+
+			a:hover {
+				background:none;
+				text-decoration:none;
+			}
+		}
+	}
+
+	.date {
+		width:150px;
+		height:26px;
+		padding-right:20px;
+		float:right;
+		text-align:right;
+		color:#ffffff;
+		padding-top:13px;
+	}
 }
-.menu {
-	margin-left:0px;
-	padding-left:0px;
-	height:38px;
-	float:left;
-	padding-top:1px;
-	list-style-type:none;
-}
-.menu li {
-	width:115px;
-	height:36px;
-	float:left;
-	padding-left:0px;
-	padding-right:11px;
-}
-.menu li a {
-	display:block;
-	width:115px;
-	height:26px;
-	background:none;
-	text-align:center;
-	padding-top:10px;
-	color:#ffffff;
-	font-size:14px;
-	text-decoration:none;
-}
-.menu li a:hover {
-	display:block;
-	margin-left:1px;
-	width:115px;
-	height:26px;
-	background:none;
-	text-align:center;
-	padding-top:10px;
-	color:#ffffff;
-	font-size:14px;
-	text-decoration:none;
-}
-.date {
-	width:150px;
-	height:26px;
-	padding-right:20px;
-	float:right;
-	text-align:right;
-	color:#ffffff;
-	padding-top:13px;
-}
+
 /*产品搜索*/
 .Pro_search {
 	clear:both;
@@ -165,16 +175,22 @@ input{
 	float:right;
 }
 /*中部内容*/
-#content {
-	background:#FFFFFF;
-	width:940px;
+.content {
+	width:1000px;
 	height:auto;
 	overflow:hidden;
-	padding-left:5px;
-	padding-right:5px;
-	margin-top:0px;
+	margin: 0px auto;
 	padding-top:12px;
 	padding-bottom:10px;
+
+	.left_content {
+		float: left;
+		width: 523px;
+		margin-left: 20px;
+	}
+	.right_content{
+		float: right;
+	}
 }
 .ScntL{
 width:238px;
@@ -324,30 +340,22 @@ color:#ff0000;
 text-decoration:none;
 }
 /*页脚*/
-#footer {
-	clear:both;
-	width:950px;
-	text-align:center;
-	padding-top:12px;
-	height:78px;
-	background:url(../images/footerBg.gif) no-repeat;
-}
-.footerCnt {
+.footer {
+	padding-top:20px;
 	background:#ffffff;
-	width:950px;
 	height:78px;
 	font-family: "宋体", Simsun;
 	color:#353434;
 	line-height:22px;
 	text-align:center;
-}
-.footerCnt a {
-	font-family: "宋体", Simsun;
-	color:#353434;
-	text-decoration:none;
-}
-.footerCnt a:hover {
-	font-family: "宋体", Simsun;
-	color:#ff0000;
-	text-decoration:none;
+	a {
+		font-family: "宋体", Simsun;
+		color:#353434;
+		text-decoration:none;
+	}
+	a:hover {
+		font-family: "宋体", Simsun;
+		color:#ff0000;
+		text-decoration:none;
+	}
 }

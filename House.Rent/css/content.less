@@ -321,26 +321,40 @@
 }
 .login_l
 {
-	float:left;
 	border-right:1px dashed #f9f9f9;
 }
 .login_f
 {
 	float:right;
 }
-.login_t
-{
-	font-size:18px;
-	color:#ff0000;
-	font-weight:bold;
-	width:430px;
-	padding-left:20px;
-	border-bottom:2px solid #1D83CB;
+.login_t {
+	font-size: 18px;
+	//font-weight: bold;
+	margin-left: 20px;
+	line-height: 45px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #dcdcdc;
 }
-.login_cont
-{
-	width:430px;
-	padding-left:20px;
+.login-cont{
+	background-color: #f5f5f5;
+	padding: 50px 0px;
+}
+.login_cont{
+	margin-top: 30px;
+	width:350px;
+	height: 300px;
+	background: #FFFFFF;
+	dl{
+		line-height: 60px;
+		dt{
+			display: inline-block;
+			width: 90px;
+			text-align: right;
+		}
+		dd{
+			display: inline-block;
+		}
+	}
 }
 .login_txt
 {
@@ -351,4 +365,20 @@
 	padding: 6px 0 5px 5px;
 	font-family: "Microsoft Yahei";
 	border-radius: 5px;
+}
+.btn_box{
+	margin: 20px 0px;
+	text-align: center;
+	input[type=submit]{
+		width: 218px;
+		background-color: #ff7800;
+		border-radius: 3px;
+		text-align: center;
+		line-height: 42px;
+		border: 0px none;
+		color: #FFFFFF;
+		font-family: "Microsoft Yahei";
+		font-size: 20px;
+		cursor: pointer;
+	}
 }

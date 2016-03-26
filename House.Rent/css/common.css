@@ -1,18 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
-html {
-  background: #e9ecf1;
-}
 * {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   font-size: 14px;
 }
 a {
-  color: #249EF9;
+  color: #666;
   text-decoration: none;
 }
 a:hover {
-  color: #ff0000;
+  color: #ff7800;
   text-decoration: none;
 }
 body {
@@ -22,16 +20,12 @@ body {
 input {
   font-size: 14px;
 }
-#container {
-  width: 958px;
-  height: auto;
-  overflow: hidden;
-}
-.top {
-  width: 928px;
-  height: 20px;
-  padding-top: 7px;
+.top .top_cont {
+  width: 1000px;
+  margin: 0px auto;
   text-align: right;
+  height: 22px;
+  padding-top: 6px;
   font-family: "宋体", Simsun;
   padding-right: 22px;
   color: #ffffff;
@@ -39,11 +33,15 @@ input {
   border-bottom: 1px solid #f1f1f1;
 }
 .top a {
-  color: #ffffff;
+  font-size: 12px;
   text-decoration: none;
+  padding: 0px 10px;
+}
+.top a:not(:last-child) {
+  border-right: 1px solid #333;
 }
 .top a:hover {
-  color: #000000;
+  color: #ff7800;
   text-decoration: none;
 }
 /*广告图片*/
@@ -62,50 +60,51 @@ input {
   top: 10px;
 }
 /*导航*/
-#nav {
-  width: 929px;
-  padding-left: 21px;
-  height: 39px;
+.nav {
+  background: #e8400d;
+  background: #fc6e2b;
 }
-.menu {
+.nav .nav_cont {
+  width: 1000px;
+  height: 40px;
+  margin: 0px auto;
+}
+.nav .menu {
   margin-left: 0px;
   padding-left: 0px;
-  height: 38px;
   float: left;
-  padding-top: 1px;
   list-style-type: none;
 }
-.menu li {
+.nav .menu li {
   width: 115px;
-  height: 36px;
   float: left;
-  padding-left: 0px;
+  height: 40px;
   padding-right: 11px;
 }
-.menu li a {
+.nav .menu li:hover {
+  background: #e8400d;
+  background: #FFFFFF;
+  color: #e8400d;
+}
+.nav .menu li:hover a {
+  color: #e8400d;
+}
+.nav .menu li a {
   display: block;
+  color: #FFFFFF;
   width: 115px;
   height: 26px;
   background: none;
   text-align: center;
   padding-top: 10px;
-  color: #ffffff;
   font-size: 14px;
   text-decoration: none;
 }
-.menu li a:hover {
-  display: block;
-  margin-left: 1px;
-  width: 115px;
-  height: 26px;
+.nav .menu li a:hover {
   background: none;
-  text-align: center;
-  padding-top: 10px;
-  color: #ffffff;
-  font-size: 14px;
   text-decoration: none;
 }
-.date {
+.nav .date {
   width: 150px;
   height: 26px;
   padding-right: 20px;
@@ -160,16 +159,21 @@ input {
   float: right;
 }
 /*中部内容*/
-#content {
-  background: #FFFFFF;
-  width: 940px;
+.content {
+  width: 1000px;
   height: auto;
   overflow: hidden;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: 0px;
+  margin: 0px auto;
   padding-top: 12px;
   padding-bottom: 10px;
+}
+.content .left_content {
+  float: left;
+  width: 523px;
+  margin-left: 20px;
+}
+.content .right_content {
+  float: right;
 }
 .ScntL {
   width: 238px;
@@ -316,29 +320,21 @@ input {
   text-decoration: none;
 }
 /*页脚*/
-#footer {
-  clear: both;
-  width: 950px;
-  text-align: center;
-  padding-top: 12px;
-  height: 78px;
-  background: url(../images/footerBg.gif) no-repeat;
-}
-.footerCnt {
+.footer {
+  padding-top: 20px;
   background: #ffffff;
-  width: 950px;
   height: 78px;
   font-family: "宋体", Simsun;
   color: #353434;
   line-height: 22px;
   text-align: center;
 }
-.footerCnt a {
+.footer a {
   font-family: "宋体", Simsun;
   color: #353434;
   text-decoration: none;
 }
-.footerCnt a:hover {
+.footer a:hover {
   font-family: "宋体", Simsun;
   color: #ff0000;
   text-decoration: none;

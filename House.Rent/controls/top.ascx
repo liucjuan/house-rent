@@ -1,33 +1,38 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="top.ascx.cs" Inherits="controls_top" %>
 
 <div id="top" class="top">
-    <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">设为首页&nbsp;|&nbsp;</a><a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏&nbsp;|&nbsp;</a>
-    <%if (Request.Cookies["buy"] != null)
-      {%>
-      欢迎，<%=HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]) %>&nbsp;&nbsp;<a href="member_index.aspx">会员中心</a>&nbsp;&nbsp;<asp:LinkButton
-          ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
-    <%}
-      else
-      { %>
-    <a href="login.aspx">登录&nbsp;|&nbsp;</a><a href="login.aspx">注册</a>
-    <%} %>
+    <div class="top_cont">
+        <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">设为首页</a>
+        <a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏</a>
+        <%if (Request.Cookies["buy"] != null)
+          {%>
+          欢迎，<%=HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]) %>
+        <a href="member_index.aspx">会员中心</a>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
+        <%}
+          else
+          { %>
+            <a href="login.aspx">登录</a>
+            <a href="login.aspx">注册</a>
+        <%} %>
+    </div>    
 </div>
 
-<div id="nav">
-    <ul class="menu">
-        <li><a href="index.aspx">网站首页</a></li>
-        <li><a href="supply.aspx?cls=1">出租房源</a></li>
-        <li><a href="ly.aspx?cls=2">在线留言</a></li>
+<div id="nav" class="nav">
+    <div class="nav_cont">
+        <ul class="menu">
+            <li><a href="index.aspx">网站首页</a></li>
+            <li><a href="supply.aspx?cls=1">出租房源</a></li>
+            <li><a href="ly.aspx?cls=2">在线留言</a></li>
 
-        <li><a href="supply.aspx?cls=4">预租房源</a></li>
+            <li><a href="supply.aspx?cls=4">预租房源</a></li>
 
-        <li><a href="supply.aspx?cls=3">站内新闻</a></li>
-    </ul>
-    <div class="date">
-
-        <script src="js/date.js" type="text/javascript"></script>
-
-    </div>
+            <li><a href="supply.aspx?cls=3">站内新闻</a></li>
+        </ul>
+        <div class="date">
+            <script src="js/date.js" type="text/javascript"></script>
+        </div>
+    </div>    
 </div>
 
 <%--<div class="Pro_search">
