@@ -30,7 +30,7 @@
                             </div>
                             <div class="newTitle2">
                                 <a href="supply.aspx?cls=1" target="_blank">
-                                    <img src="images/icon3.gif" alt="more" border="0" /></a>
+                                    <img src="images/icon3.gif" alt="more" /></a>
                             </div>
                         </div>
                         <div class="newCnt">
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="more">
                                     <a href="supply.aspx?cls=2" target="_blank">
-                                        <img src="images/icon3.gif" alt="more" border="0" /></a>
+                                        <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>
                             <div class="gsjjCnt">
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="more">
                                     <a href="buy.aspx" target="_blank">
-                                        <img src="images/icon3.gif" alt="more" border="0" /></a>
+                                        <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>
                             <div class="recruitCnt">
@@ -103,7 +103,7 @@
                         <div class="gsjjTitle">
                             <div class="gsjjTitle1"><a href="javascript:void(0);">房产图片</a></div>
                             <div class="more">
-                                <img src="images/icon3.gif" alt="more" border="0" />
+                                <img src="images/icon3.gif" alt="more" />
                             </div>                            
                         </div>
                         <div class="ProLxt">
@@ -113,7 +113,7 @@
                                         <ItemTemplate>
                                             <li>
                                                 <img src="<%#System.IO.File.Exists(Server.MapPath("upload/"+Eval("pro_img")))?"upload/"+Eval("pro_img"):"images/no-img.gif" %>"
-                                                    alt="<%#Eval("pro_title") %>" width="148" height="115" border="0" />
+                                                    alt="<%#Eval("pro_title") %>" width="148" height="115" />
                                                 <span>
                                                     <%#CommonLib.CutString.CutWithSubstring(Eval("pro_title").ToString(),8) %>
                                                 </span></li>

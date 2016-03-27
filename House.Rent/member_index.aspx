@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>无标题页</title>
     <link href="css/common.css" rel="stylesheet" type="text/css" />
@@ -14,11 +14,12 @@
     <form id="form1" runat="server">
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
-            <div id="content">
+            <div id="content" class="content">
                 <div class="ScntL">
                     <div class="Smenu">
                         <div class="SmenuTitle">
-                            会员中心</div>
+                            会员中心
+                        </div>
                         <div class="SmenuCnt">
                             <ul>
                                 <li><a href="member_index.aspx">个人资料</a></li>
@@ -29,44 +30,42 @@
                             </ul>
                         </div>
                         <div class="SmenuBg">
-                            <img src="images/lmt_q_b.gif" alt="bg" /></div>
+                            <img src="images/lmt_q_b.gif" alt="bg" />
+                        </div>
                     </div>
                 </div>
                 <div class="ScntR">
                     <div class="ScntR_title">
                         <span class="ScntR_title1">
-                            <img src="images/icon4.gif" align="absmiddle" style="margin-right: 8px;" />个人资料</span>
-                        <span class="ScntR_title2">你现在的位置：<a href="/">首页&nbsp;&gt;&nbsp;</a><a href="member_index.aspx">个人资料</a></span></div>
+                            <img src="images/icon4.gif" alt="" style="margin-right: 8px;" />个人资料</span>
+                        <span class="ScntR_title2">你现在的位置：<a href="/">首页&nbsp;&gt;&nbsp;</a><a href="member_index.aspx">个人资料</a></span>
+                    </div>
                     <div class="productsBox">
                         <div class="newLxt0">
                             <table>
                                 <tr>
-                                    <td width="80" align="right" height="30">
-                                        电话：
+                                    <td width="80" align="right" height="30">电话：
                                     </td>
                                     <td>
                                         <asp:TextBox ID="tel" runat="server" CssClass="login_txt" MaxLength="50"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="80" align="right" height="30">
-                                        QQ：
+                                    <td width="80" align="right" height="30">QQ：
                                     </td>
                                     <td>
                                         <asp:TextBox ID="qq" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="80" align="right" height="30">
-                                        地址：
+                                    <td width="80" align="right" height="30">地址：
                                     </td>
                                     <td>
                                         <asp:TextBox ID="add" runat="server" CssClass="login_txt" MaxLength="200"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                    </td>
+                                    <td></td>
                                     <td>
                                         <asp:Button ID="Button1" runat="server" Text="提交" OnClick="Button1_Click" />
                                     </td>
@@ -76,10 +75,11 @@
                     </div>
                 </div>
             </div>
-            <div id="footer">
+            <div id="footer" class="footer">
                 <div class="footerCnt">
                     <p>
-                        版权所有：房屋租赁系统网站 <a href="System/ManagerThisWay.aspx" target=_blank>管理员登录</a></p>
+                        版权所有：房屋租赁系统网站 <a href="System/ManagerThisWay.aspx" target="_blank">管理员登录</a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -2,16 +2,15 @@
 
 <div id="top" class="top">
     <div class="top_cont">
+        <%if (Request.Cookies["buy"] != null){%>
+          <span>欢迎，<%=HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]) %></span>
+        <%}%>
         <a href="javascript:void(0);" onclick="SetHome(this,'http://'+window.location.host);">设为首页</a>
         <a href="javascript:void(0);" onclick="AddFavorite('http://'+window.location.host,document.title)">加入收藏</a>
-        <%if (Request.Cookies["buy"] != null)
-          {%>
-          欢迎，<%=HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]) %>
+        <%if (Request.Cookies["buy"] != null){%>
         <a href="member_index.aspx">会员中心</a>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
-        <%}
-          else
-          { %>
+        <%}else{ %>
             <a href="login.aspx">登录</a>
             <a href="login.aspx">注册</a>
         <%} %>
@@ -24,9 +23,7 @@
             <li><a href="index.aspx">网站首页</a></li>
             <li><a href="supply.aspx?cls=1">出租房源</a></li>
             <li><a href="ly.aspx?cls=2">在线留言</a></li>
-
             <li><a href="supply.aspx?cls=4">预租房源</a></li>
-
             <li><a href="supply.aspx?cls=3">站内新闻</a></li>
         </ul>
         <div class="date">

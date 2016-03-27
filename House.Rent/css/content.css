@@ -64,10 +64,7 @@
 }
 .pages {
   clear: both;
-  width: 650px;
-  height: 22px;
   text-align: center;
-  font-size: 12px;
   padding-top: 15px;
 }
 .pages a {
@@ -109,47 +106,33 @@
 /*新闻列表*/
 .newLxt0 {
   clear: both;
-  width: 670px;
   padding-left: 10px;
   padding-right: 7px;
   height: auto;
   margin-top: 8px;
 }
 .newLxt {
-  width: 670px;
   height: auto;
-  margin-left: 0px;
-  padding-left: 0px;
   list-style-type: none;
 }
 .newLxt li {
-  width: 670px;
-  height: 25px;
+  height: 30px;
+  line-height: 30px;
   border-bottom: 1px dashed #cccccc;
   text-align: left;
-  padding-left: 0px;
-  margin-left: 0px;
 }
 .no {
-  display: block;
   float: left;
   width: 530px;
-  height: 18px;
   text-align: left;
   padding-left: 15px;
-  padding-top: 7px;
   color: #666666;
-  background: url(../images/icon1.gif) no-repeat;
-  background-position: 0px 8px;
+  background: url(../images/icon1.gif) 0 8px no-repeat;
 }
 .lxtDate {
-  display: block;
-  width: 82px;
   float: right;
-  height: 17px;
   text-align: right;
   padding-right: 8px;
-  padding-top: 8px;
   color: #666666;
 }
 .no a,

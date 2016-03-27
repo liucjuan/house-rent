@@ -27,7 +27,8 @@ input {
   padding-top: 6px;
   font-family: "宋体", Simsun;
   padding-right: 22px;
-  color: #ffffff;
+  color: #666;
+  font-size: 12px;
   background: #fafafa;
   border-bottom: 1px solid #f1f1f1;
 }
@@ -176,16 +177,9 @@ input {
 }
 .ScntL {
   width: 238px;
-  height: auto;
   float: left;
-  overflow: hidden;
 }
 /*栏目导航*/
-.Smenu {
-  width: 238px;
-  height: auto;
-  margin-bottom: 15px;
-}
 .SmenuTitle {
   padding-left: 25px;
   padding-top: 13px;
