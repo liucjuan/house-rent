@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 using System.Web;
 
 /// <summary>
@@ -9,18 +11,30 @@ using System.Web;
 public class TableLogHelper
 {
     #region 获取用户日志
-    public DataSet GetUserLog(string UserId)
+    public DataSet GetUserLog(string userName,int pageSize,int pageIndex)
     {
-        //string sql = "select m_id from member where m_name='" + name + "'";
-        //string con = CommonLib.SqlHelper.SqlConnectionString;
-        //string mid = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
-        //string where = " where m_id2=" + mid;
-        //string count = "select count(*) from log" + where;
-        //AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
-        //sql = "select * from log" + where + " order by l_id desc";
-
-
-        return null;
+        StringBuilder sql = new StringBuilder();
+        sql.AppendFormat("select top {0} * from {1} where m_id2 in ( select m_id from {2} where m_name='{3}') and l_id not in (select top {0}*({4}-1) id from {1} order by l_id desc) order by l_id desc", pageSize,DBConfig.log, DBConfig.member, userName,pageIndex);
+        DataSet ds = DBHelper.GetDataSet(sql.ToString());
+        if (ds != null)
+        {
+            return ds;
+        }
+        else
+        {
+            return null;
+        }
     }
     #endregion
+
+    #region 获取记录总数
+    public int GetLogCount(string userName)
+    {
+        StringBuilder sql = new StringBuilder();
+        sql.AppendFormat("select count(*) from {0} where m_id2 in (select m_id from {1} where m_name='{2}')",DBConfig.log,DBConfig.member,userName);
+        int count = DBHelper.GetScalar(sql.ToString());
+        return count;
+    }
+    #endregion
+
 }

@@ -26,20 +26,31 @@ public class TableProductHelper
     }
     #endregion
 
-    #region 获取产品信息中的某个字段
-    public string GetProductFields(string fields, string pro_id)
+    #region 获取产品信息中的某些字段
+    public Dictionary<string,string> GetProductFields(List<string> fields, string pro_id,int type)
     {
-        string value = string.Empty;
+        Dictionary<string,string> valueDic = new Dictionary<string,string>();
         DataSet dataSet = GetProductInfo(pro_id);
         if (dataSet != null)
         {
-            value = dataSet.Tables[0].Rows[0][fields].ToString();
-            if (!string.IsNullOrEmpty(value))
+            if (fields != null && fields.Count > 0 && type==0)
             {
-                return value;
+                foreach (string field in fields)
+                {
+                    string value = dataSet.Tables[0].Rows[0][field].ToString();
+                    valueDic.Add(field, value);
+                }
+            }
+            if (type == 1)
+            {
+                foreach (string field in dataSet.Tables[0].Columns)
+                {
+                    string value = dataSet.Tables[0].Rows[0][field].ToString();
+                    valueDic.Add(field,value);
+                }
             }
         }
-        return string.Empty;
+        return valueDic;
     }
     #endregion
 }

@@ -20,7 +20,7 @@ public class TableMemberHelper
     /// <param name="user"></param>
     /// <param name="passWord"></param>
     /// <returns></returns>
-    public ErrorType VerifyLogin(string user, string passWord)
+    public static  ErrorType VerifyLogin(string user, string passWord)
     {
         StringBuilder sql = new StringBuilder();
         sql.AppendFormat("select top 1 m_pwd from {0} where m_name={1}", DBConfig.member, user);
@@ -59,7 +59,7 @@ public class TableMemberHelper
     /// <param name="userName"></param>
     /// <param name="passWord"></param>
     /// <returns></returns>
-    public ErrorType UpdatePassWord(string userName, string passWord)
+    public static ErrorType UpdatePassWord(string userName, string passWord)
     {
         StringBuilder sql = new StringBuilder();
         sql.AppendFormat("update {0} set m_pwd='{1}' where m_name='{2}'", DBConfig.member, passWord, userName);
@@ -78,7 +78,7 @@ public class TableMemberHelper
     /// </summary>
     /// <param name="userName"></param>
     /// <returns></returns>
-    public SqlDataReader GetUserInfo(string userName)
+    public static SqlDataReader GetUserInfo(string userName)
     {
         StringBuilder sql = new StringBuilder();
         sql.AppendFormat("select top 1 from {0} where m_name={1}", DBConfig.member, userName);
@@ -93,7 +93,7 @@ public class TableMemberHelper
     /// </summary>
     /// <param name="userName"></param>
     /// <returns></returns>
-    public ErrorType IsUserExist(string userName)
+    public static ErrorType IsUserExist(string userName)
     {
         SqlDataReader reader = GetUserInfo(userName);
         if (reader.Read())

@@ -20,6 +20,12 @@ public enum ErrorType
 
     [EnumDescription("密码有误")]
     BadPassWord = 0003,
+
+    [EnumDescription("where条件有误")]
+    BadWhere= 0004,
+
+    [EnumDescription("数据更新参数有误")]
+    BadUpdate = 0005,
 }
 
 

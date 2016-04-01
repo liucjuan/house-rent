@@ -24,18 +24,21 @@ public class TableProClsHelper
         return new DataSet();
     }
 
-    public string GetPro_ClsFields(string fields, string pro_cls_id)
+    public Dictionary<string,string> GetPro_ClsFields(List<String> fields, string pro_cls_id)
     {
-        string value = string.Empty;
+        Dictionary<string, string> valueDic = new Dictionary<string,string>();
         DataSet dataSet = GetPro_ClsInfo(pro_cls_id);
         if (dataSet != null)
         {
-            value = dataSet.Tables[0].Rows[0][fields].ToString();
-            if (!string.IsNullOrEmpty(value))
+            if (fields != null && fields.Count > 0)
             {
-                return value;
+                foreach (string item in fields)
+                {
+                    string value = dataSet.Tables[0].Rows[0][item].ToString();
+                    valueDic.Add(item,value);
+                }
             }
         }
-        return string.Empty;
+        return valueDic;
     }
 }
