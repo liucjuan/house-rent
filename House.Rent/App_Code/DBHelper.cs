@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Web;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// DBHelper 的摘要说明
@@ -329,6 +330,55 @@ public class DBHelper
             }
         }
         return ErrorType.Failed;
+    }
+    #endregion
+
+    #region 单表分页
+    public static DataSet Pagination( int pageSize, int pageIndex, Dictionary<string, string> whereDic, string id, string tableName)
+    {
+        string wheres = string.Empty;
+        StringBuilder sql = new StringBuilder();
+        if (whereDic != null && whereDic.Count > 0)
+        {
+            List<string> wheresList = GetDictionaryKeyAndValue(whereDic);
+            if (wheresList != null && wheresList.Count > 0)
+            {
+                foreach (string item in wheresList)
+                {
+                    wheres += "and " + item;
+                }
+            }
+        }
+        int sum = pageIndex > 0 ? (pageIndex)*pageSize : 0;
+        sql.AppendFormat("select top {0} * from {1} where 1=1 {2} and {3} not in (select top {4} {3} from {1} order by {3} desc) order by {3} desc", pageSize, tableName, wheres, id, sum);
+        DataSet ds = DBHelper.GetDataSet(sql.ToString());
+        if (ds != null)
+        {
+            return ds;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    #endregion
+
+    #region 数据绑定
+    public static void BindRepeater(Repeater myRepeater, DataSet ds)
+    {
+        try
+        {
+            if (ds != null)
+            {
+                DataView dv = ds.Tables[0].DefaultView;
+                myRepeater.DataSource = dv;
+                myRepeater.DataBind();
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
     #endregion
 
