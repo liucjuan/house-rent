@@ -1,15 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Management;
 
-/// <summary>
-/// HfModel 的摘要说明
-/// </summary>
-public class HfModel
+namespace Model
 {
-    public int id { get; set; }
+    /// <summary>
+    /// HfModel 的摘要说明
+    /// </summary>
+    public class HfModel
+    {
+        private int id;
 
-    public int lid { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public string hfnr { get; set; }
+      //  public int Lid { get; set; }
+
+        private int lid;
+
+        public int Lid
+        {
+            get { return lid; }
+            set { lid = value; }
+        }
+
+        private string hfnr;
+
+        public string Hfnr
+        {
+            get { return hfnr; }
+            set { hfnr = value; }
+        }
+    }
+
 }

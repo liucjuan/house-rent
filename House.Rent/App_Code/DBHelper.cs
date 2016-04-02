@@ -162,7 +162,6 @@ public class DBHelper
 
     public static SqlDataReader SelectReader(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
     {
-        SqlDataReader reader = new SqlDataReader();
         string fields = string.Empty;
         string wheres = string.Empty;
         if (fieldList != null && fieldList.Count > 0)
@@ -191,8 +190,8 @@ public class DBHelper
         }
 
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("select {0} from {1} where 1=1 {3}", fields, tableName, wheres);
-        reader = GetReader(sql.ToString());
+        sql.AppendFormat("select {0} from {1} where 1=1 {2}", fields, tableName, wheres);
+        SqlDataReader reader = GetReader(sql.ToString());
         return reader;
     }
 

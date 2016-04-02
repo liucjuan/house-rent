@@ -2,16 +2,43 @@
 using System.Collections.Generic;
 using System.Web;
 
-/// <summary>
-/// LiuYanModel 的摘要说明
-/// </summary>
-public class LiuYanModel
+namespace Model
 {
-    public int id { get; set; }
+    /// <summary>
+    /// LiuYanModel 的摘要说明
+    /// </summary>
+    public class LiuYanModel
+    {
+        private int id;
 
-    public string title { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public string contents { get; set; }
+        private string title;
 
-    public string uid { get; set; }
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        private string contents;
+
+        public string Contents
+        {
+            get { return contents; }
+            set { contents = value; }
+        }
+
+        private string uid;
+
+        public string Uid
+        {
+            get { return uid; }
+            set { uid = value; }
+        }
+    }
 }
