@@ -7,48 +7,59 @@
     <title></title>
     <link href="css/login.css" type="text/css" rel="stylesheet" />
 
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
     <script language="javascript" type="text/javascript">
-    
-        function kong()
-        {
-            var username=document.getElementById("txtUserName");
-            var pwd=document.getElementById("txtPwd");
-            var txtPng=document.getElementById("txtPng");
-            
-            if(username.value=="")
-            {
+
+        function kong() {
+            var username = document.getElementById("txtUserName");
+            var pwd = document.getElementById("txtPwd");
+            var txtPng = document.getElementById("txtPng");
+
+            if (username.value == "") {
                 alert("请输入用户名!");
                 username.focus();
                 return false;
             }
-            else if(pwd.value=="")
-            {
+            else if (pwd.value == "") {
                 alert("请输入密码!");
                 pwd.focus();
                 return false;
             }
-            else if(txtPng.value=="")
-            {
+            else if (txtPng.value == "") {
                 alert("请输入验证码!");
                 txtPng.focus();
                 return false;
             }
-            else if(txtPng.value!=GetAsaiCookie("CheckCode").toLowerCase())
-            {
+            else if (txtPng.value.toLowerCase() != GetAsaiCookie("CheckCode").toLowerCase()) {
                 alert("您输入的验证码不正确！");
                 document.getElementById('imgcode').click();
-                txtPng.value="";
+                txtPng.value = "";
                 txtPng.focus();
                 return false;
             }
         }
         //读取cookies
-        function GetAsaiCookie(name)
-        {
-        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-        if(arr=document.cookie.match(reg)) return unescape(arr[2]);
-        else return null;
+        function GetAsaiCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg)) return unescape(arr[2]);
+            else return null;
         }
+    </script>
+    
+    <script type="text/javascript">
+        $(function () {
+            var tab2 = $("#tab2");
+
+            tab2.css({
+                "height": document.documentElement.clientHeight - 104 + "px"
+            });
+            //tab2.style.height = document.documentElement.clientHeight - 104 + "px";
+            var top = $("#top");
+            top.css({
+                "height": document.documentElement.clientHeight - 404 + "px"
+            });
+            //top.style.height = document.documentElement.clientHeight - 404 + "px";
+        });
     </script>
 
 </head>
@@ -141,15 +152,12 @@
             </table>
         </div>
         <div id="div2" style="display: none">
-        </div>
-
-        <script type="text/javascript">
-            var tab2=document.getElementById("tab2");
-            tab2.style.height=document.documentElement.clientHeight-104+"px";
-            var top=document.getElementById("top");
-            top.style.height=document.documentElement.clientHeight-404+"px";
-        </script>
+        </div>      
 
     </form>
+
+
+    
+
 </body>
 </html>
