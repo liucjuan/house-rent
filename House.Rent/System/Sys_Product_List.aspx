@@ -62,7 +62,7 @@
                                         <td height="32" colspan="2" style="padding: 10px;">&nbsp;
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                                 Width="98%" BorderWidth="0px" CellPadding="0" CellSpacing="1" BackColor="#B5D6E6"
-                                                OnRowDeleting="GridView1_RowDeleting" onmouseover="changeto()" onmouseout="changeback()">
+                                                OnRowDeleting="GridView1_RowDeleting"  OnRowCommand="Operate_RowCommand" onmouseover="changeto()" onmouseout="changeback()">
                                                 <Columns>
                                                     <asp:BoundField DataField="pro_id" HeaderText="编号">
                                                         <ItemStyle HorizontalAlign="Center" Width="60px" />
@@ -101,8 +101,11 @@
                                                         <ItemTemplate>
                                                             <img src="images/del.gif" alt="" width="16" height="16" />
                                                             <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Delete" OnClientClick='JavaScript:return confirm("删除后将无法恢复，确定删除吗？")'>删除</asp:LinkButton>
+
+                                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="check" CommandArgument='<%# Eval("pro_id") %>'  >审核</asp:LinkButton>
                                                         </ItemTemplate>
                                                         <ItemStyle HorizontalAlign="Center" Width="160px" />
+
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="选择">
                                                         <ItemTemplate>

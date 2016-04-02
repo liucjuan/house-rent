@@ -79,8 +79,40 @@ public partial class System_Sys_Product_List : System.Web.UI.Page
     }
     #endregion
 
+
+    #region 审核操作
+    protected void Operate_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "check")
+        {
+
+            string id = e.CommandArgument.ToString();
+            string sql = "";
+            sql = "update product set states='已审核' where pro_id=" + id.ToString();
+            try
+            {
+
+                int i = CommonLib.SqlHelper.ExecuteNonQuery(con, CommandType.Text, sql, null);
+                if (i > 0)
+                {
+                    Bind();
+
+                    CommonLib.JavaScriptHelper.Alert("审核成功！", this.Page);
+                }
+                else
+                {
+                    CommonLib.JavaScriptHelper.Alert("服务器繁忙！", this.Page);
+                }
+            }
+            catch
+            {
+                CommonLib.JavaScriptHelper.Alert("服务器繁忙，删除失败！", this.Page);
+            }
+        }
+    }
+    #endregion
+
     #region 删除
-    //删除
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         int id = Convert.ToInt32(GridView1.Rows[e.RowIndex].Cells[0].Text);
@@ -109,7 +141,7 @@ public partial class System_Sys_Product_List : System.Web.UI.Page
             CommonLib.JavaScriptHelper.Alert("服务器繁忙，删除失败！", this.Page);
         }
     }
-    #endregion
+    #endregion    
 
     #region 批量删除
     /// <summary>
