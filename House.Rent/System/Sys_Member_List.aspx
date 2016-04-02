@@ -3,7 +3,7 @@
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
@@ -99,7 +99,7 @@
                                         Text=" 删 除 " OnClientClick='javascript:return confirm("删除后将无法恢复，确定删除吗？");'></asp:Button>
                                 </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">&nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>

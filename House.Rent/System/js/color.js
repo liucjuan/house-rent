@@ -19,24 +19,21 @@ if(cs[1]!=null)
 }
 }
 
-function  changeback(){
-if(document.all)
-{
-if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
-return;
-}
-else
-{
-if  (source.id=="nc")
-return;
-}
-if(cs[1]!=null)
-{
-    if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
-    for(i=0;i<cs.length;i++){
-	    cs[i].style.backgroundColor="";
+function changeback() {
+    if (document.all) {
+        if (event.fromElement.contains(event.toElement) || source.contains(event.toElement) || source.id == "nc")
+            return;
     }
-}
+    else {
+        if (source.id == "nc")
+            return;
+    }
+    if (cs && cs[1]) {
+        if (event.toElement != source && cs[1].style.backgroundColor != clickcolor)
+            for (i = 0; i < cs.length; i++) {
+                cs[i].style.backgroundColor = "";
+            }
+    }
 }
 
 if(!document.all)

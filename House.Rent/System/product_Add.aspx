@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="product_Add.aspx.cs" Inherits="System_Sys_Member_Add" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
@@ -230,7 +230,7 @@
                                     </tr>
                                 </table>
                                 <asp:Button ID="Button1" runat="server" Text="提交" OnClick="Button1_Click" OnClientClick="javascript:return kong();" /></td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">&nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>

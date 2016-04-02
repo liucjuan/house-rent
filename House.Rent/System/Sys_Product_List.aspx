@@ -125,7 +125,7 @@
                                         Text=" 删 除 " OnClientClick='javascript:return confirm("删除后将无法恢复，确定删除吗？");'></asp:Button>
                                 </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">
                                 &nbsp;</td>
                         </tr>
                     </table>
