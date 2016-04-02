@@ -25,7 +25,7 @@ public class TableMemberHelper
         StringBuilder sql = new StringBuilder();
         sql.AppendFormat("select top 1 m_pwd from {0} where m_name='{1}'", DBConfig.member, user);
         SqlDataReader reader =DBHelper.GetReader(sql.ToString());
-        if (reader.Read())
+        if (reader!=null && reader.Read())
         {
             if (!reader.IsDBNull(0))
             {
