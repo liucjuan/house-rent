@@ -155,7 +155,7 @@ public class DBHelper
         }
 
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("select {0} from {1} where 1=1 {3}",fields,tableName,wheres);
+        sql.AppendFormat("select {0} form {1} where 1=1 {2}",fields,tableName,wheres);
         ds = GetDataSet(sql.ToString());
         return ds;
     }
