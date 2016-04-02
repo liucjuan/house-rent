@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
 
 public partial class supply_display : System.Web.UI.Page
 {
@@ -21,14 +22,25 @@ public partial class supply_display : System.Web.UI.Page
             {
                 //try
                 //{
-                    int id = Convert.ToInt32(Request.QueryString["id"]);
-                    string sql = "select count(*) from product where pro_id=" + id;
-                    int count = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(CommonLib.SqlHelper.SqlConnectionString, CommandType.Text, sql, null));
-                    if (count > 0)
-                    {
-                        Bind();
-                    }
-                   
+                #region 暂时不用
+                //int id = Convert.ToInt32(Request.QueryString["id"]);
+                //string sql = "select count(*) from product where pro_id=" + id;
+                //int count = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(CommonLib.SqlHelper.SqlConnectionString, CommandType.Text, sql, null));
+                // public static int SelectDataCount(List<string> fieldList, Dictionary<string, string> whereDic, string tableName) 
+                #endregion
+
+                     List<string> fieldList=new List<string>();
+                     Dictionary<string, string> whereDic=new Dictionary<string, string>();
+                     if (Request.QueryString["id"] != null)
+                     {
+                         whereDic.Add("pro_id", Request.QueryString["id"]);
+                     }
+                     int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
+                if (count > 0)
+                {
+                    Bind();
+                }
+
                 //}
                 //catch
                 //{
@@ -66,9 +78,20 @@ public partial class supply_display : System.Web.UI.Page
         //CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
         //#endregion
         //#region 绑定内容
-       string sql = "select * from product where pro_id=" + Request.QueryString["id"];
-   
-        CommonLib.SqlHelper.BindRepeater(rep_intro, con, CommandType.Text, sql, null);
+
+        #region 暂时不用
+        //string sql = "select * from product where pro_id=" + Request.QueryString["id"];
+        //CommonLib.SqlHelper.BindRepeater(rep_intro, con, CommandType.Text, sql, null); 
+        #endregion
+
+        List<string> fieldList = new List<string>();
+        Dictionary<string, string> whereDic = new Dictionary<string, string>();
+        if (Request.QueryString["id"] != null)
+        {
+            whereDic.Add("pro_id", Request.QueryString["id"]);
+        }
+        DataSet ds = DBHelper.SelectDataSet(fieldList, whereDic, DBConfig.product);
+        DBHelper.BindRepeater(rep_intro, ds);
         #endregion
     }
   
