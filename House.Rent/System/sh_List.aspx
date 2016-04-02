@@ -98,8 +98,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="操作">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="LinkButton1"
-                                                                runat="server" CommandName="Delete">审核</asp:LinkButton>
+                                                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Delete">审核</asp:LinkButton>
                                                         </ItemTemplate>
                                                         <ItemStyle HorizontalAlign="Center" Width="160px" />
                                                     </asp:TemplateField>

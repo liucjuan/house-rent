@@ -32,15 +32,15 @@
                                                 <tr>
                                                     <td width="5%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" width="16" height="16" />
+                                                        </div>
                                                     </td>
                                                     <td width="95%">
                                                         <b>你当前的位置</b>：[<a href="sys_product_list.aspx">房源信息</a>][<a href="product_Add.aspx">添加房源</a>]</td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td width="54%">
-                                        </td>
+                                        <td width="54%"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -54,14 +54,12 @@
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
                             <td>
                                 <table align="center" bgcolor="#b0d0f3" border="0" cellpadding="4" cellspacing="1"
                                     width="98%" style="margin-top: 10px; font-size: 12px; text-indent: 3px;">
                                     <tr bgcolor="#ffffff">
-                                        <td height="32" colspan="2" style="padding: 10px;">
-                                            &nbsp;
+                                        <td height="32" colspan="2" style="padding: 10px;">&nbsp;
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                                 Width="98%" BorderWidth="0px" CellPadding="0" CellSpacing="1" BackColor="#B5D6E6"
                                                 OnRowDeleting="GridView1_RowDeleting" onmouseover="changeto()" onmouseout="changeback()">
@@ -76,7 +74,7 @@
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="pro_name" HeaderText="房源户型" />
-                                                   
+
                                                     <asp:TemplateField HeaderText="图片">
                                                         <ItemTemplate>
                                                             <img alt='<%#Eval("pro_name") %>' src="<%#Eval("pro_img").ToString()!=""?"../upload/"+Eval("pro_img"):"../images/no-img.gif" %>"
@@ -89,7 +87,7 @@
                                                             <%#getclsname(Eval("pro_type").ToString())%>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                      <asp:TemplateField HeaderText="状态">
+                                                    <asp:TemplateField HeaderText="状态">
                                                         <ItemTemplate>
                                                             <%#Eval("states").ToString()%>
                                                         </ItemTemplate>
@@ -101,8 +99,8 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="操作">
                                                         <ItemTemplate>
-                                                            <img src="images/del.gif" width="16" height="16" /><asp:LinkButton ID="LinkButton1"
-                                                                runat="server" CommandName="Delete" OnClientClick='JavaScript:return confirm("删除后将无法恢复，确定删除吗？")'>删除</asp:LinkButton>
+                                                            <img src="images/del.gif" alt="" width="16" height="16" />
+                                                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Delete" OnClientClick='JavaScript:return confirm("删除后将无法恢复，确定删除吗？")'>删除</asp:LinkButton>
                                                         </ItemTemplate>
                                                         <ItemStyle HorizontalAlign="Center" Width="160px" />
                                                     </asp:TemplateField>
@@ -119,14 +117,13 @@
                                     </tr>
                                 </table>
                                 <div class="pl">
-                                    <input id="quanxuan" class="btn_blue" onclick="javascript:btn_xuan(this);" type="button"
+                                    <input id="quanxuan" class="btn_blue" onclick="javascript: btn_xuan(this);" type="button"
                                         value=" 全 选 " runat="server" />
                                     <asp:Button ID="Button2" OnClick="Button2_Click" runat="server" CssClass="btn_blue"
                                         Text=" 删 除 " OnClientClick='javascript:return confirm("删除后将无法恢复，确定删除吗？");'></asp:Button>
                                 </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>
@@ -148,7 +145,8 @@
                                     </webdiyer:AspNetPager>
                                 </div>
                                 <div style="width: 1%; float: left;">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                                 <!--分页处结束-->
                             </td>
                             <td width="16">
