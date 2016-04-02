@@ -18,7 +18,7 @@ public partial class supply : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            //#region 判断参数
+            #region 判断参数
             //if (Request["cls"] != null)
             //{
             //    try
@@ -61,7 +61,7 @@ public partial class supply : System.Web.UI.Page
             //{
             //    //Bind(0);
             //}
-            //#endregion
+            #endregion
             Bind();
         }
     }
@@ -70,6 +70,7 @@ public partial class supply : System.Web.UI.Page
     #region 绑定列表
     private void Bind()
     {
+        #region 暂时不用
         //string where = "";
         //if (Request["cls"] != null)
         //{
@@ -79,6 +80,8 @@ public partial class supply : System.Web.UI.Page
         //AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
         //string sql = "select * from product" + where + " order by pro_id desc";
         // SelectDataCount(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+        //   CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1); 
+        #endregion
 
         List<string> fieldList=new List<string>();
         Dictionary<string, string> whereDic=new Dictionary<string, string>();
@@ -91,7 +94,7 @@ public partial class supply : System.Web.UI.Page
         DataSet ds = DBHelper.Pagination(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, whereDic, "pro_id", DBConfig.product);
         DBHelper.BindRepeater(rep_list,ds);
 
-     //   CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
+
     }
     #endregion
 

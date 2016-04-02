@@ -512,45 +512,53 @@ public class DBHelper
     #endregion
 
     #region  DataReader转换为obj
+
     /// <summary>  
     /// DataReader转换为obj  
     /// </summary>  
     /// <typeparam name="T">泛型</typeparam>  
     /// <param name="rdr">datareader</param>  
     /// <returns>返回泛型类型</returns>  
-    protected static object DataReaderToObj<T>(SqlDataReader rdr)
+    public static Object DataReaderToObj<T>(SqlDataReader rdr)
     {
-        T t = System.Activator.CreateInstance<T>();
-        Type obj = t.GetType();
-
-        if (rdr.Read())
+        try
         {
-            // 循环字段  
-            for (int i = 0; i < rdr.FieldCount; i++)
+            T t = System.Activator.CreateInstance<T>();
+            Type obj = t.GetType();
+
+            if (rdr != null && rdr.Read())
             {
-                object tempValue = null;
-
-                if (rdr.IsDBNull(i))
+                // 循环字段  
+                for (int i = 0; i < rdr.FieldCount; i++)
                 {
+                    object tempValue = null;
 
-                    string typeFullName = obj.GetProperty(rdr.GetName(i)).PropertyType.FullName;
-                    tempValue = GetDBNullValue(typeFullName);
+                    if (rdr.IsDBNull(i))
+                    {
+
+                        string typeFullName = obj.GetProperty(rdr.GetName(i)).PropertyType.FullName;
+                        tempValue = GetDBNullValue(typeFullName);
+
+                    }
+                    else
+                    {
+                        tempValue = rdr.GetValue(i);
+
+                    }
+
+                    obj.GetProperty(rdr.GetName(i)).SetValue(t, tempValue, null);
 
                 }
-                else
-                {
-                    tempValue = rdr.GetValue(i);
-
-                }
-
-                obj.GetProperty(rdr.GetName(i)).SetValue(t, tempValue, null);
-
+                return t;
             }
-            return t;
         }
-        else
-            return null;
+        catch (Exception)
+        {
+            return new object();
+        }
+        return new object();
     }
+
     #endregion
 
     #region 返回值为DBnull的默认值
