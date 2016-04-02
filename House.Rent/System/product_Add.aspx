@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="product_Add.aspx.cs" Inherits="System_Sys_Member_Add" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
@@ -47,26 +47,27 @@
 
             }
             else {
-                a1.style.display = 'block';
-                a2.style.display = 'block';
-                a3.style.display = 'block';
-                a4.style.display = 'block';
-                a5.style.display = 'block';
-                a6.style.display = 'block';
-                a7.style.display = 'block';
-                a8.style.display = 'block';
-                a9.style.display = 'block';
-                a10.style.display = 'block';
-                a11.style.display = 'block';
-                a12.style.display = 'block';
-                a13.style.display = 'block';
-                a14.style.display = 'block';
+                a1.style.display = '';
+                a2.style.display = '';
+                a3.style.display = '';
+                a4.style.display = '';
+                a5.style.display = '';
+                a6.style.display = '';
+                a7.style.display = '';
+                a8.style.display = '';
+                a9.style.display = '';
+                a10.style.display = '';
+                a11.style.display = '';
+                a12.style.display = '';
+                a13.style.display = '';
+                a14.style.display = '';
             }
         }
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
+
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td height="30" background="images/tab_05.gif">
@@ -102,8 +103,7 @@
             </tr>
             <tr>
                 <td>
-                    <table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#b5d6e6" class="grid"
-                        height="250" style="margin-top: 10px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#b5d6e6" class="grid" height="250">
                         <tr>
                             <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
                             <td>
