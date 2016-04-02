@@ -45,7 +45,10 @@ function tab_color_onload()
 {
     if(document.readyState == "complete")
     {
-        document.getElementById("GridView1").style.border="1px solid #B5D6E6";
+        var gridView1 = document.getElementById("GridView1");
+        if (gridView1) {
+            gridView1.style.border = "1px solid #B5D6E6";
+        }        
     }
     else
     {
