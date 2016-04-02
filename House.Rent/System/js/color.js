@@ -19,24 +19,21 @@ if(cs[1]!=null)
 }
 }
 
-function  changeback(){
-if(document.all)
-{
-if  (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="nc")
-return;
-}
-else
-{
-if  (source.id=="nc")
-return;
-}
-if(cs[1]!=null)
-{
-    if  (event.toElement!=source&&cs[1].style.backgroundColor!=clickcolor)
-    for(i=0;i<cs.length;i++){
-	    cs[i].style.backgroundColor="";
+function changeback() {
+    if (document.all) {
+        if (event.fromElement.contains(event.toElement) || source.contains(event.toElement) || source.id == "nc")
+            return;
     }
-}
+    else {
+        if (source.id == "nc")
+            return;
+    }
+    if (cs && cs[1]) {
+        if (event.toElement != source && cs[1].style.backgroundColor != clickcolor)
+            for (i = 0; i < cs.length; i++) {
+                cs[i].style.backgroundColor = "";
+            }
+    }
 }
 
 if(!document.all)
@@ -45,7 +42,10 @@ function tab_color_onload()
 {
     if(document.readyState == "complete")
     {
-        document.getElementById("GridView1").style.border="1px solid #B5D6E6";
+        var gridView1 = document.getElementById("GridView1");
+        if (gridView1) {
+            gridView1.style.border = "1px solid #B5D6E6";
+        }        
     }
     else
     {

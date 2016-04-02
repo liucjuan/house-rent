@@ -21,11 +21,16 @@ public partial class login : System.Web.UI.Page
     {
         string user = CommonLib.CutString.UrnHtml(login_user.Text.Trim());
         string pwd = login_pwd.Text;
-        string sql = "select count(*) from member where m_name='" + user
-            + "' and m_pwd='" + pwd + "'";
-        string con = CommonLib.SqlHelper.SqlConnectionString;
-        int count = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
-        if (count > 0)
+
+        #region 暂时不用
+        //string sql = "select count(*) from member where m_name='" + user
+        //    + "' and m_pwd='" + pwd + "'";
+        //string con = CommonLib.SqlHelper.SqlConnectionString;
+        //int count = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null)); 
+        #endregion
+
+        ErrorType errorType=TableMemberHelper.VerifyLogin(user, pwd);
+        if (errorType == ErrorType.Success)
         {
             HttpCookie cookies = Request.Cookies["buy"];
             cookies = new HttpCookie("buy");

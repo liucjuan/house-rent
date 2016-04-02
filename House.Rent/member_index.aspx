@@ -29,9 +29,6 @@
                                 <li><a href="ckhf.aspx">查看留言回复</a></li>
                             </ul>
                         </div>
-                        <div class="SmenuBg">
-                            <img src="images/lmt_q_b.gif" alt="bg" />
-                        </div>
                     </div>
                 </div>
                 <div class="ScntR">

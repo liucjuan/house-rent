@@ -180,37 +180,43 @@ input {
   float: left;
 }
 /*栏目导航*/
-.SmenuTitle {
-  padding-left: 25px;
-  padding-top: 13px;
-  width: 213px;
-  height: 21px;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-  background: url(../images/lmt_q.gif) no-repeat;
-  background-position: 0px 0px;
+.Smenu {
+  background: #F6F6F6;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  padding: 10px;
 }
-.SmenuTitle a {
+.Smenu .SmenuTitle {
+  padding-left: 10px;
+  color: #FF6C00;
+  font-weight: bold;
+}
+.Smenu .SmenuTitle a {
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
 }
-.SmenuTitle a:hover {
+.Smenu .SmenuTitle a:hover {
   color: #663300;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
 }
-.SmenuCnt {
-  padding-left: 24px;
-  padding-right: 24px;
-  width: 190px;
-  padding-top: 2px;
-  height: auto;
-  background: url(../images/lmt_bg.gif) repeat-y;
-  margin-top: 0px;
+.Smenu .SmenuCnt {
+  padding: 0px 10px 10px 10px;
+}
+.Smenu .SmenuCnt ul {
+  list-style-type: none;
+}
+.Smenu .SmenuCnt ul li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 15px;
+  padding-top: 10px;
+  color: #000000;
+  background: url(../images/right1.gif) 0px 20px no-repeat;
+  border-bottom: 1px dashed #ff9933;
 }
 .SlxwmCnt {
   padding-left: 14px;
@@ -220,40 +226,6 @@ input {
   height: auto;
   background: url(../images/lmt_bg.gif) repeat-y;
   margin-top: 0px;
-}
-.SmenuCnt ul {
-  width: 190px;
-  height: auto;
-  margin-left: 0px;
-  padding-left: 0px;
-  list-style-type: none;
-  padding-bottom: 10px;
-}
-.SmenuCnt ul li {
-  width: 175px;
-  height: 18px;
-  border-bottom: 1px dashed #ff9933;
-  padding-left: 15px;
-  margin-left: 0px;
-  color: #000000;
-  font-size: 12px;
-  margin-top: 13px;
-  padding-top: 3px;
-  background: url(../images/right1.gif) no-repeat;
-  background-position: 0px 5px;
-}
-.SmenuCnt ul li a {
-  color: #000000;
-  font-size: 12px;
-  text-decoration: none;
-}
-.SmenuCnt ul li a:hover {
-  color: #ff0000;
-  text-decoration: none;
-}
-.SmenuBg {
-  width: 238px;
-  height: 9px;
 }
 /*联系我们*/
 .lxwmPic {

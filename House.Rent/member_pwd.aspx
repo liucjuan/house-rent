@@ -46,7 +46,7 @@
     <form id="form1" runat="server">
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
-            <div id="content">
+            <div id="content" class="content">
                 <div class="ScntL">
                     <div class="Smenu">
                         <div class="SmenuTitle">
@@ -54,12 +54,9 @@
                         <div class="SmenuCnt">
                             <ul>
                                 <li><a href="member_index.aspx">个人资料</a></li>
-                                <li><a href="member_pwd.aspx">修改密码</a></li>
-                                
+                                <li><a href="member_pwd.aspx">修改密码</a></li>                                
                             </ul>
                         </div>
-                        <div class="SmenuBg">
-                            <img src="images/lmt_q_b.gif" alt="bg" /></div>
                     </div>
                 </div>
                 <div class="ScntR">
@@ -106,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div id="footer">
+            <div id="footer" class="footer">
                 <div class="footerCnt">
                     <p>
                         版权所有：房屋租赁系统网站 <a href="System/ManagerThisWay.aspx" target=_blank>管理员登录</a></p>

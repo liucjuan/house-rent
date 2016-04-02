@@ -14,11 +14,11 @@
     <form id="form1" runat="server">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td height="30" background="images/tab_05.gif">
+                <td height="30" style="background: url(images/tab_05.gif)">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="12" height="30">
-                                <img src="images/tab_03.gif" width="12" height="30" /></td>
+                                <img src="images/tab_03.gif" alt="" width="12" height="30" /></td>
                             <td>
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
@@ -27,15 +27,15 @@
                                                 <tr>
                                                     <td width="3%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" alt="" width="16" height="16" />
+                                                        </div>
                                                     </td>
                                                     <td width="97%">
                                                         <b>你当前的位置</b>：[<a href="sys_manager_list.aspx">管理员管理</a>] - [<a href="sys_manager_add.aspx">添加管理员</a>]</td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td width="10%">
-                                        </td>
+                                        <td width="10%"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -49,34 +49,27 @@
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
                             <td>
                                 <table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#b5d6e6" class="grid"
-                                    height="250" style="margin-top:10px;">
+                                    height="250" style="margin-top: 10px;">
                                     <tr>
-                                        <td style="height: 30px; width: 100px;">
-                                            帐号：</td>
-                                        <td>
-                                            &nbsp;<asp:TextBox ID="txt_user" runat="server" CssClass="text" Width="271px"></asp:TextBox>
+                                        <td style="height: 30px; width: 100px;">帐号：</td>
+                                        <td>&nbsp;<asp:TextBox ID="txt_user" runat="server" CssClass="text" Width="271px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_user"
                                                 ErrorMessage="请填写用户名！" ValidationGroup="btn"></asp:RequiredFieldValidator></td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 100px; height: 30px">
-                                            密码：</td>
-                                        <td>
-                                            &nbsp;<asp:TextBox ID="txt_pwd" runat="server" CssClass="text" TextMode="Password"
-                                                Width="270px"></asp:TextBox>
+                                        <td style="width: 100px; height: 30px">密码：</td>
+                                        <td>&nbsp;<asp:TextBox ID="txt_pwd" runat="server" CssClass="text" TextMode="Password"
+                                            Width="270px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_pwd"
                                                 ErrorMessage="请填写密码！" ValidationGroup="btn"></asp:RequiredFieldValidator></td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 100px; height: 30px">
-                                            确认密码：</td>
-                                        <td>
-                                            &nbsp;<asp:TextBox ID="txt_pwd_re" runat="server" CssClass="text" TextMode="Password"
-                                                Width="270px"></asp:TextBox>
+                                        <td style="width: 100px; height: 30px">确认密码：</td>
+                                        <td>&nbsp;<asp:TextBox ID="txt_pwd_re" runat="server" CssClass="text" TextMode="Password"
+                                            Width="270px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_pwd_re"
                                                 ErrorMessage="请再次填写密码！" ValidationGroup="btn"></asp:RequiredFieldValidator>
                                             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txt_pwd"
@@ -89,8 +82,7 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>
@@ -104,7 +96,8 @@
                             <td style="color: #03515d; height: 18px;">
                                 <!--分页处开始-->
                                 <div style="width: 100%">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                                 <!--分页处结束-->
                             </td>
                             <td width="16">

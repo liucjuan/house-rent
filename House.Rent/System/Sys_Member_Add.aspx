@@ -27,7 +27,7 @@
                                                 <tr>
                                                     <td width="3%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" alt="" width="16" height="16" /></div>
                                                     </td>
                                                     <td width="97%">
                                                         <b>你当前的位置</b>：[<a href="sys_member_list.aspx">会员管理</a>] - [<a href="sys_member_add.aspx">添加会员</a>]</td>
@@ -110,7 +110,7 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">
                                 &nbsp;</td>
                         </tr>
                     </table>
