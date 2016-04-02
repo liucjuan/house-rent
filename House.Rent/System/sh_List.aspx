@@ -58,7 +58,7 @@
                                 <table align="center" bgcolor="#b0d0f3" border="0" cellpadding="4" cellspacing="1"
                                     width="98%" style="margin-top: 10px; font-size: 12px; text-indent: 3px;">
                                     <tr bgcolor="#ffffff">
-                                        <td height="32" colspan="2" style="padding: 10px;">&nbsp;
+                                        <td height="32" colspan="2" style="padding: 10px;">
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                                 Width="98%" BorderWidth="0px" CellPadding="0" CellSpacing="1" BackColor="#B5D6E6"
                                                 OnRowDeleting="GridView1_RowDeleting" onmouseover="changeto()" onmouseout="changeback()">
