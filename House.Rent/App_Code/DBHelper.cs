@@ -32,7 +32,7 @@ public class DBHelper
             {
                 connection.Open();
             }
-            else if (connection.State == System.Data.ConnectionState.Broken)
+            else if (connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
                 connection.Open();
@@ -79,6 +79,25 @@ public class DBHelper
             return 0;
         }
     } 
+    #endregion
+
+    #region 执行无参SQL语句，并返所查询的字段
+    /// <summary> 
+    /// 执行无参SQL语句，并返所查询的字段 
+    /// </summary> 
+    public static object GetScalarTwo(string safeSql)
+    {
+        try
+        {
+            SqlCommand cmd = new SqlCommand(safeSql, Connection);
+            object result =cmd.ExecuteScalar();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return new object();
+        }
+    }
     #endregion
 
     #region  执行无参SQL语句，并返回SqlDataReader 
@@ -150,13 +169,13 @@ public class DBHelper
             {
                 foreach (string item in wheresList)
                 {
-                    wheres += "and" + item;
+                    wheres += "and " + item;
                 }
             }
         }
 
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("select {0} form {1} where 1=1 {2}",fields,tableName,wheres);
+        sql.AppendFormat("select {0} from {1} where 1=1 {2}",fields,tableName,wheres);
         ds = GetDataSet(sql.ToString());
         return ds;
     }
@@ -185,7 +204,7 @@ public class DBHelper
             {
                 foreach (string item in wheresList)
                 {
-                    wheres += "and" + item;
+                    wheres += " and " + item;
                 }
             }
         }
@@ -228,8 +247,46 @@ public class DBHelper
         sql.AppendFormat("select {0} from {1} where 1=1 {2}", fields, tableName, wheres);
         int count = GetScalar(sql.ToString());
         return count;
+    }
+
+
+    public static object SelectDataObject(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+    {
+        string fields = string.Empty;
+        string wheres = string.Empty;
+        if (fieldList != null && fieldList.Count > 0)
+        {
+            fields = GetListValue(fieldList);
+            if (string.IsNullOrEmpty(fields))
+            {
+                fields = "*";
+            }
+        }
+        else
+        {
+            fields = "*";
+        }
+
+        if (whereDic != null && whereDic.Count > 0)
+        {
+            List<string> wheresList = GetDictionaryKeyAndValue(whereDic);
+            if (wheresList != null && wheresList.Count > 0)
+            {
+                foreach (string item in wheresList)
+                {
+                    wheres += "and " + item;
+                }
+            }
+        }
+        StringBuilder sql = new StringBuilder();
+        sql.AppendFormat("select {0} from {1} where 1=1 {2}", fields, tableName, wheres);
+        object two = GetScalarTwo(sql.ToString());
+        return two;
     } 
+
     #endregion
+
+
 
     #region 数据更新
     public static ErrorType UpdateData(Dictionary<string, string> updateDic, Dictionary<string, string> whereDic, string tableName)
@@ -255,7 +312,7 @@ public class DBHelper
             { 
                 foreach(string temp in whereList)
                 {
-                    where += "and" + temp;
+                    where += "and " + temp;
                 }
             }
         }
@@ -289,7 +346,7 @@ public class DBHelper
             {
                 foreach (string temp in whereList)
                 {
-                    where += "and" + temp;
+                    where += "and " + temp;
                 }
             }
         }
@@ -345,7 +402,7 @@ public class DBHelper
             {
                 foreach (string item in wheresList)
                 {
-                    wheres += "and " + item;
+                    wheres += " and " + item;
                 }
             }
         }
@@ -465,100 +522,6 @@ public class DBHelper
             return new List<string>();
         }
     } 
-    #endregion
-
-    #region DataReader转换为obj list
-    /// <summary>  
-    /// DataReader转换为obj list  
-    /// </summary>  
-    /// <typeparam name="T">泛型</typeparam>  
-    /// <param name="rdr">datareader</param>  
-    /// <returns>返回泛型类型</returns>  
-    protected static IList<T> DataReader2Obj<T>(SqlDataReader rdr)
-    {
-        IList<T> list = new List<T>();
-
-        while (rdr.Read())
-        {
-            T t = System.Activator.CreateInstance<T>();
-            Type obj = t.GetType();
-            // 循环字段  
-            for (int i = 0; i < rdr.FieldCount; i++)
-            {
-                object tempValue = null;
-
-                if (rdr.IsDBNull(i))
-                {
-
-                    string typeFullName = obj.GetProperty(rdr.GetName(i)).PropertyType.FullName;
-                    tempValue = GetDBNullValue(typeFullName);
-
-                }
-                else
-                {
-                    tempValue = rdr.GetValue(i);
-
-                }
-
-                obj.GetProperty(rdr.GetName(i)).SetValue(t, tempValue, null);
-
-            }
-
-            list.Add(t);
-
-        }
-        return list;
-    }  
-    #endregion
-
-    #region  DataReader转换为obj
-
-    /// <summary>  
-    /// DataReader转换为obj  
-    /// </summary>  
-    /// <typeparam name="T">泛型</typeparam>  
-    /// <param name="rdr">datareader</param>  
-    /// <returns>返回泛型类型</returns>  
-    public static Object DataReaderToObj<T>(SqlDataReader rdr)
-    {
-        try
-        {
-            T t = System.Activator.CreateInstance<T>();
-            Type obj = t.GetType();
-
-            if (rdr != null && rdr.Read())
-            {
-                // 循环字段  
-                for (int i = 0; i < rdr.FieldCount; i++)
-                {
-                    object tempValue = null;
-
-                    if (rdr.IsDBNull(i))
-                    {
-
-                        string typeFullName = obj.GetProperty(rdr.GetName(i)).PropertyType.FullName;
-                        tempValue = GetDBNullValue(typeFullName);
-
-                    }
-                    else
-                    {
-                        tempValue = rdr.GetValue(i);
-
-                    }
-
-                    obj.GetProperty(rdr.GetName(i)).SetValue(t, tempValue, null);
-
-                }
-                return t;
-            }
-        }
-        catch (Exception)
-        {
-            return new object();
-        }
-        return new object();
-    }
-
     #endregion
 
     #region 返回值为DBnull的默认值

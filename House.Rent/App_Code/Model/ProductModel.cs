@@ -184,9 +184,9 @@ namespace Model
             set { yt = value; }
         }
 
-        private char states;
+        private string states;
 
-        public char States
+        public string States
         {
             get { return states; }
             set { states = value; }
