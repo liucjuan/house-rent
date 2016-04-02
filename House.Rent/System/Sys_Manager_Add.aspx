@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td height="30" style="background:url(images/tab_05.gif)">
+                <td height="30" style="background: url(images/tab_05.gif)">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="12" height="30">
@@ -82,7 +82,7 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">&nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>

@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <title>案例管理</title>
     <link type="text/css" href="css/grid.css" rel="stylesheet" />
 
@@ -32,15 +32,14 @@
                                                 <tr>
                                                     <td width="5%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" width="16" height="16" />
+                                                        </div>
                                                     </td>
-                                                    <td width="95%">
-                                                       </td>
+                                                    <td width="95%"></td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td width="54%">
-                                        </td>
+                                        <td width="54%"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -54,14 +53,12 @@
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
                             <td>
                                 <table align="center" bgcolor="#b0d0f3" border="0" cellpadding="4" cellspacing="1"
                                     width="98%" style="margin-top: 10px; font-size: 12px; text-indent: 3px;">
                                     <tr bgcolor="#ffffff">
-                                        <td height="32" colspan="2" style="padding: 10px;">
-                                            &nbsp;
+                                        <td height="32" colspan="2" style="padding: 10px;">&nbsp;
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                                 Width="98%" BorderWidth="0px" CellPadding="0" CellSpacing="1" BackColor="#B5D6E6"
                                                 OnRowDeleting="GridView1_RowDeleting" onmouseover="changeto()" onmouseout="changeback()">
@@ -85,7 +82,7 @@
                                                             <%#getmname(Eval("m_id").ToString())%>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                   
+
                                                     <asp:TemplateField HeaderText="提交时间">
                                                         <ItemTemplate>
                                                             <%#Eval("l_date","{0:d}")%>
@@ -111,14 +108,13 @@
                                     </tr>
                                 </table>
                                 <div class="pl">
-                                    <input id="quanxuan" class="btn_blue" onclick="javascript:btn_xuan(this);" type="button"
+                                    <input id="quanxuan" class="btn_blue" onclick="javascript: btn_xuan(this);" type="button"
                                         value=" 全 选 " runat="server" />
                                     <asp:Button ID="Button2" OnClick="Button2_Click" runat="server" CssClass="btn_blue"
                                         Text=" 删 除 " OnClientClick='javascript:return confirm("删除后将无法恢复，确定删除吗？");'></asp:Button>
                                 </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>
@@ -140,7 +136,8 @@
                                     </webdiyer:AspNetPager>
                                 </div>
                                 <div style="width: 1%; float: left;">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                                 <!--分页处结束-->
                             </td>
                             <td width="16">

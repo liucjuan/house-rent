@@ -99,13 +99,17 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="操作">
                                                         <ItemTemplate>
-                                                            <img src="images/del.gif" alt="" width="16" height="16" />
+                                                            
+                                                            <a href="product_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright">编辑</a>
+                                                            <img src="images/edt.gif" alt="" width="16" height="16" />
+                                                            
+                                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="check" CommandArgument='<%# Eval("pro_id") %>'>审核</asp:LinkButton>
+                                                            <img src="images/33.gif" alt="" width="16" height="16" />
+                                                            
                                                             <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Delete" OnClientClick='JavaScript:return confirm("删除后将无法恢复，确定删除吗？")'>删除</asp:LinkButton>
-
-                                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="check" CommandArgument='<%# Eval("pro_id") %>'  >审核</asp:LinkButton>
+                                                            <img src="images/del.gif" alt="" width="16" height="16" />                                                                                                                    
                                                         </ItemTemplate>
                                                         <ItemStyle HorizontalAlign="Center" Width="160px" />
-
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="选择">
                                                         <ItemTemplate>

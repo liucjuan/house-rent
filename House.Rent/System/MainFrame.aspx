@@ -163,15 +163,16 @@
                     <td valign="top" width="100%" bgcolor="#337abb">
                         <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#c4d8ed" border="0">
                             <tbody>
-                                <tr height="32">
+                                <tr style="height: 32px;">
                                     <td valign="top" width="10" background="images/bg2.gif">
                                         <img alt="" src="images/teble_top_left.gif"></td>
                                     <td width="28" background="images/bg2.gif"></td>
                                     <td background="images/bg2.gif"></td>
-                                    <td style="color: #135294; text-align: right" background="images/bg2.gif">欢迎您，<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                                    <td style="color: #135294; text-align: right" background="images/bg2.gif">欢迎您，
+                                        <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
                                         管理员&nbsp; |
                                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
-                                        | <a href="javascript:void(0);" onclick="parent.opener=null;window.close();">关闭窗口</a>
+                                        <%--| <a href="javascript:void(0);" onclick="parent.opener=null;window.close();">关闭窗口</a>--%>
                                     </td>
                                     <td valign="top" align="right" width="28" background="images/bg2.gif">
                                         <img alt="" src="images/teble_top_right.gif"></td>
