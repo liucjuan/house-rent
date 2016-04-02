@@ -10,7 +10,6 @@
     <link type="text/css" href="css/grid.css" rel="stylesheet" />
 
     <script type="text/javascript" src="js/quanxuan.js"></script>
-
     <script type="text/javascript" src="js/color.js"></script>
 
 </head>
@@ -19,11 +18,11 @@
         <asp:HiddenField ID="hid" runat="server" />
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td height="30" background="images/tab_05.gif">
+                <td height="30" style="background: url(images/tab_05.gif)">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="12" height="30">
-                                <img src="images/tab_03.gif" width="12" height="30" /></td>
+                                <img src="images/tab_03.gif" alt="" width="12" height="30" /></td>
                             <td>
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
@@ -32,20 +31,20 @@
                                                 <tr>
                                                     <td width="5%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" alt="" width="16" height="16" />
+                                                        </div>
                                                     </td>
                                                     <td width="95%">
                                                         <b>你当前的位置</b>：</td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td width="54%">
-                                        </td>
+                                        <td width="54%"></td>
                                     </tr>
                                 </table>
                             </td>
                             <td width="16">
-                                <img src="images/tab_07.gif" width="16" height="30" /></td>
+                                <img src="images/tab_07.gif" alt="" width="16" height="30" /></td>
                         </tr>
                     </table>
                 </td>
@@ -54,14 +53,12 @@
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
                             <td>
                                 <table align="center" bgcolor="#b0d0f3" border="0" cellpadding="4" cellspacing="1"
                                     width="98%" style="margin-top: 10px; font-size: 12px; text-indent: 3px;">
                                     <tr bgcolor="#ffffff">
-                                        <td height="32" colspan="2" style="padding: 10px;">
-                                            &nbsp;
+                                        <td height="32" colspan="2" style="padding: 10px;">&nbsp;
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                                 Width="98%" BorderWidth="0px" CellPadding="0" CellSpacing="1" BackColor="#B5D6E6"
                                                 OnRowDeleting="GridView1_RowDeleting" onmouseover="changeto()" onmouseout="changeback()">
@@ -76,7 +73,7 @@
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="pro_name" HeaderText="房源户型" />
-                                                   
+
                                                     <asp:TemplateField HeaderText="图片">
                                                         <ItemTemplate>
                                                             <img alt='<%#Eval("pro_name") %>' src="<%#Eval("pro_img").ToString()!=""?"../upload/"+Eval("pro_img"):"../images/no-img.gif" %>"
@@ -89,7 +86,7 @@
                                                             <%#getclsname(Eval("pro_type").ToString())%>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                      <asp:TemplateField HeaderText="状态">
+                                                    <asp:TemplateField HeaderText="状态">
                                                         <ItemTemplate>
                                                             <%#Eval("states").ToString()%>
                                                         </ItemTemplate>
@@ -101,8 +98,8 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="操作">
                                                         <ItemTemplate>
-                                                        <asp:LinkButton ID="LinkButton1"
-                                                                runat="server" CommandName="Delete" >审核</asp:LinkButton>
+                                                            <asp:LinkButton ID="LinkButton1"
+                                                                runat="server" CommandName="Delete">审核</asp:LinkButton>
                                                         </ItemTemplate>
                                                         <ItemStyle HorizontalAlign="Center" Width="160px" />
                                                     </asp:TemplateField>
@@ -119,20 +116,20 @@
                                     </tr>
                                 </table>
                                 <div class="pl">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td height="35" background="images/tab_19.gif">
+                <td height="35" style="background: url(images/tab_19.gif)">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="12" height="35">
-                                <img src="images/tab_18.gif" width="12" height="35" /></td>
+                                <img src="images/tab_18.gif" alt="" width="12" height="35" /></td>
                             <td style="color: #03515d;">
                                 <!--分页处开始-->
                                 <div style="width: 98%; float: left;">
@@ -144,11 +141,12 @@
                                     </webdiyer:AspNetPager>
                                 </div>
                                 <div style="width: 1%; float: left;">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                                 <!--分页处结束-->
                             </td>
                             <td width="16">
-                                <img src="images/tab_20.gif" width="16" /></td>
+                                <img src="images/tab_20.gif" alt="" width="16" /></td>
                         </tr>
                     </table>
                 </td>
