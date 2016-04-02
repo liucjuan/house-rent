@@ -7,6 +7,7 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <link href="css/style_left.css" type="text/css" rel="stylesheet" />
 
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
     <script language="javaScript" src="js/menu.js" type="text/javascript"></script>
 
 </head>
