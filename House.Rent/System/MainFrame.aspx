@@ -7,6 +7,7 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <link href="css/style_left.css" type="text/css" rel="stylesheet" />
 
+    <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
     <script language="javaScript" src="js/menu.js" type="text/javascript"></script>
 
 </head>
@@ -16,7 +17,8 @@
         <div class="top_table">
             <div class="top_table_leftbg">
                 <div class="system_logo">
-                    <%--<img src="images/logo.gif">--%></div>
+                    <%--<img src="images/logo.gif">--%>
+                </div>
                 <div class="menu">
                     <ul>
                         <li id="menu_0" onclick="getleftbar(this,'sys_manager_list.aspx');"><a>后台管理员</a>
@@ -33,7 +35,7 @@
                         <li id="menu_1" onclick="getleftbar(this,'sys_member_list.aspx');"><a>会员管理</a>
                             <div class="menu_childs">
                                 <ul>
-                                 <%--   <li><a href="sys_member_add.aspx" target="frmright">添加会员</a></li>--%>
+                                    <%--   <li><a href="sys_member_add.aspx" target="frmright">添加会员</a></li>--%>
                                     <li><a href="sys_member_list.aspx" target="frmright">会员列表</a></li>
                                 </ul>
                             </div>
@@ -49,16 +51,7 @@
                             <div class="menu_div">
                             </div>
                         </li>
-                         <li id="Li1" onclick="getleftbar(this,'sh_list.aspx');"><a>房源审核</a>
-                            <div class="menu_childs">
-                                <ul>
-                                    <li><a href="sh_list.aspx" target="frmright">房源审核</a></li>
-                                </ul>
-                            </div>
-                            <div class="menu_div">
-                            </div>
-                        </li>
-                       <li id="menu_3" onclick="getleftbar(this,'sys_product_list.aspx?cls=2');"><a>站内新闻</a>
+                        <li id="menu_3" onclick="getleftbar(this,'sys_product_list.aspx?cls=2');"><a>站内新闻</a>
                             <div class="menu_childs">
                                 <ul>
                                     <li><a href="sys_product_list.aspx?cls=2" target="frmright">站内新闻</a></li>
@@ -68,8 +61,8 @@
                             <div class="menu_div">
                             </div>
                         </li>
-                       
-                       
+
+
                         <li id="Li2" onclick="getleftbar(this,'ly_List.aspx');"><a>留言管理</a>
                             <div class="menu_childs">
                                 <ul>
@@ -79,7 +72,7 @@
                             <div class="menu_div">
                             </div>
                         </li>
-                     <li id="menu_4" onclick="getleftbar(this,'sys_log_list.aspx');"><a href="sys_log_list.aspx" target="frmright">租房记录</a>
+                        <li id="menu_4" onclick="getleftbar(this,'sys_log_list.aspx');"><a href="sys_log_list.aspx" target="frmright">租房记录</a>
                             <div class="menu_childs">
                                 <ul>
                                     <li><a href="sys_log_list.aspx" target="frmright">租房记录</a></li>
@@ -112,12 +105,9 @@
                         <table class="main_left_top" cellspacing="0" cellpadding="0" width="100%" border="0">
                             <tbody>
                                 <tr height="32">
-                                    <td valign="top">
-                                    </td>
-                                    <td class="main_left_title" id="leftmenu_title">
-                                        常用快捷功能</td>
-                                    <td valign="top" align="right">
-                                    </td>
+                                    <td valign="top"></td>
+                                    <td class="main_left_title" id="leftmenu_title">常用快捷功能</td>
+                                    <td valign="top" align="right"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -141,24 +131,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="copyright">
-                                    </td>
+                                    <td class="copyright"></td>
                                 </tr>
                                 <tr>
-                                    <td class="copyright">
-                                    </td>
+                                    <td class="copyright"></td>
                                 </tr>
                             </tbody>
                         </table>
                         <table cellspacing="0" cellpadding="0" width="100%" border="0">
                             <tbody>
                                 <tr height="32">
-                                    <td valign="top">
-                                    </td>
-                                    <td valign="bottom" align="middle">
-                                    </td>
-                                    <td valign="top" align="right">
-                                    </td>
+                                    <td valign="top"></td>
+                                    <td valign="bottom" align="middle"></td>
+                                    <td valign="top" align="right"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -178,23 +163,20 @@
                     <td valign="top" width="100%" bgcolor="#337abb">
                         <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#c4d8ed" border="0">
                             <tbody>
-                                <tr height="32">
+                                <tr style="height: 32px;">
                                     <td valign="top" width="10" background="images/bg2.gif">
                                         <img alt="" src="images/teble_top_left.gif"></td>
-                                    <td width="28" background="images/bg2.gif">
-                                    </td>
-                                    <td background="images/bg2.gif">
-                                    </td>
-                                    <td style="color: #135294; text-align: right" background="images/bg2.gif">
-                                        欢迎您，<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                                    <td width="28" background="images/bg2.gif"></td>
+                                    <td background="images/bg2.gif"></td>
+                                    <td style="color: #135294; text-align: right" background="images/bg2.gif">欢迎您，
+                                        <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
                                         管理员&nbsp; |
                                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">安全退出</asp:LinkButton>
-                                        | <a href="javascript:void(0);" onclick="parent.opener=null;window.close();">关闭窗口</a>
+                                        <%--| <a href="javascript:void(0);" onclick="parent.opener=null;window.close();">关闭窗口</a>--%>
                                     </td>
                                     <td valign="top" align="right" width="28" background="images/bg2.gif">
                                         <img alt="" src="images/teble_top_right.gif"></td>
-                                    <td align="right" width="16" bgcolor="#337abb">
-                                    </td>
+                                    <td align="right" width="16" bgcolor="#337abb"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -207,8 +189,7 @@
                                         <img height="6" alt="" src="images/teble_bottom_left.gif" width="5"></td>
                                     <td align="right">
                                         <img height="6" alt="" src="images/teble_bottom_right.gif" width="5"></td>
-                                    <td align="right" width="16" bgcolor="#337abb">
-                                    </td>
+                                    <td align="right" width="16" bgcolor="#337abb"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -218,24 +199,24 @@
         </table>
 
         <script type="text/javascript">
-        var tab=document.getElementById("tab");
-        tab.style.height=document.body.clientHeight-67+"px";
-        
-        var status = 1;
-        var Menus = new DvMenuCls;
-        document.onclick=Menus.Clear;
-        function switchSysBar(){
-             if (1 == window.status){
-		          window.status = 0;
-                  switchPoint.innerHTML = '<img src="images/left.gif">';
-                  document.all("frmTitle").style.display="none"
-             }
-             else{
-		          window.status = 1;
-                  switchPoint.innerHTML = '<img src="images/right.gif">';
-                  document.all("frmTitle").style.display=""
-             }
-        }
+            var tab = document.getElementById("tab");
+            tab.style.height = document.body.clientHeight - 67 + "px";
+
+            var status = 1;
+            var Menus = new DvMenuCls;
+            document.onclick = Menus.Clear;
+            function switchSysBar() {
+                if (1 == window.status) {
+                    window.status = 0;
+                    switchPoint.innerHTML = '<img src="images/left.gif">';
+                    document.all("frmTitle").style.display = "none"
+                }
+                else {
+                    window.status = 1;
+                    switchPoint.innerHTML = '<img src="images/right.gif">';
+                    document.all("frmTitle").style.display = ""
+                }
+            }
         </script>
 
     </form>

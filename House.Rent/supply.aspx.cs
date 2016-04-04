@@ -2,6 +2,7 @@
 using System.Data;
 using System.Configuration;
 using System.Collections;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -17,7 +18,7 @@ public partial class supply : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            //#region 判断参数
+            #region 判断参数
             //if (Request["cls"] != null)
             //{
             //    try
@@ -60,7 +61,7 @@ public partial class supply : System.Web.UI.Page
             //{
             //    //Bind(0);
             //}
-            //#endregion
+            #endregion
             Bind();
         }
     }
@@ -69,26 +70,31 @@ public partial class supply : System.Web.UI.Page
     #region 绑定列表
     private void Bind()
     {
-        string where = "";
+        #region 暂时不用
+        //string where = "";
+        //if (Request["cls"] != null)
+        //{
+        //    where += " where pro_type=" + Request.QueryString["cls"] + "";
+        //}
+        //string count = "select count(*) from product" + where;
+        //AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
+        //string sql = "select * from product" + where + " order by pro_id desc";
+        // SelectDataCount(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+        //   CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1); 
+        #endregion
+
+        List<string> fieldList=new List<string>();
+        Dictionary<string, string> whereDic=new Dictionary<string, string>();
         if (Request["cls"] != null)
         {
-            where += " where pro_type=" + Request.QueryString["cls"] + "";
+            whereDic.Add("pro_type",Request.QueryString["cls"]);
         }
-        //else if (Request["t"] != null)
-        //{
-        //    where += " and pro_cls_id=" + Request.QueryString["t"];
-        //}
-        //else if (Request["key"] != null)
-        //{
-        //    string key = Server.UrlDecode(Request.QueryString["key"]);
-        //    where += " and (pro_title like '%" + key + "%' or pro_name like '%" + key + "%')";
-        //    //HyperLink1.Text = "检索结果";
-        //    //Response.Write(where);
-        //}
-        string count = "select count(*) from product" + where;
-        AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
-        string sql = "select * from product" + where + " order by pro_id desc";
-        CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
+        int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
+        AspNetPager1.RecordCount = count;
+        DataSet ds = DBHelper.Pagination(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, whereDic, "pro_id", DBConfig.product);
+        DBHelper.BindRepeater(rep_list,ds);
+
+
     }
     #endregion
 
@@ -127,7 +133,7 @@ public partial class supply : System.Web.UI.Page
     }
     #endregion
 
-    //#region 绑定左侧导航
+    #region 绑定左侧导航
     //private void Bind(int cls)
     //{
     //    //if (cls > 0 && cls < 4)
@@ -151,5 +157,5 @@ public partial class supply : System.Web.UI.Page
     //    //    CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
     //    //}
     //}
-    //#endregion
+    #endregion
 }

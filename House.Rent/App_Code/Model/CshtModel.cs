@@ -2,16 +2,46 @@
 using System.Collections.Generic;
 using System.Web;
 
-/// <summary>
-/// CshtModel 的摘要说明
-/// </summary>
-public class CshtModel
+namespace   Model
 {
-    public int id { get; set; }
+    /// <summary>
+    /// CshtModel 的摘要说明
+    /// </summary>
+    public class CshtModel
+    {
+        private int id;
 
-    public string title { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public string path { get; set; }
+        private string title;
 
-    public string js { get; set; }
+        public string Title
+        {
+
+            get { return title; }
+            set { title = value; }
+        }
+
+
+        private string path;
+
+        public string Path
+        {
+            get { return path; }
+            set { path = value; }
+        }
+
+        private string js;
+
+        public string Js
+        {
+            get { return js; }
+            set { js = value; }
+        }
+    }
+
 }

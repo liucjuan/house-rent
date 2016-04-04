@@ -2,14 +2,36 @@
 using System.Collections.Generic;
 using System.Web;
 
-/// <summary>
-/// ManagerModel 的摘要说明
-/// </summary>
-public class ManagerModel
+namespace Model
 {
-    public int Manager_ID { get; set; }
+    /// <summary>
+    /// ManagerModel 的摘要说明
+    /// </summary>
+    public class ManagerModel
+    {
+        private int manager_ID;
 
-    public string Manager_Name { get; set; }
+        public int Manager_ID
+        {
+            get { return manager_ID; }
+            set { manager_ID = value; }
+        }
 
-    public string Manager_Pwd { get; set; }
+        private string manager_Name;
+
+        public string Manager_Name
+        {
+            get { return manager_Name; }
+            set { manager_Name = value; }
+        }
+
+        private string manager_Pwd;
+
+        public string Manager_Pwd
+        {
+            get { return manager_Pwd; }
+            set { manager_Pwd = value; }
+        }
+    }
+
 }

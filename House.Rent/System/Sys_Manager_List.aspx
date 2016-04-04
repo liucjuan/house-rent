@@ -10,7 +10,6 @@
     <link type="text/css" href="css/grid.css" rel="stylesheet" />
 
     <script type="text/javascript" src="js/quanxuan.js"></script>
-
     <script type="text/javascript" src="js/color.js"></script>
 
 </head>
@@ -31,7 +30,8 @@
                                                 <tr>
                                                     <td width="3%">
                                                         <div align="center">
-                                                            <img src="images/tb.gif" width="16" height="16" /></div>
+                                                            <img src="images/tb.gif" alt="" width="16" height="16" />
+                                                        </div>
                                                     </td>
                                                     <td width="97%">
                                                         <b>你当前的位置</b>：[<a href="sys_manager_list.aspx">管理员管理</a>] - [<a href="sys_manager_list.aspx">管理员列表</a>]
@@ -39,8 +39,7 @@
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td width="10%">
-                                        </td>
+                                        <td width="10%"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -54,11 +53,9 @@
                 <td>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">
-                                &nbsp;</td>
-                            <td>
-                                &nbsp;
-                                <table width="100%" style="margin-top:10px;">
+                            <td width="8" style="background: url(images/tab_12.gif) repeat-y;">&nbsp;</td>
+                            <td>&nbsp;
+                                <table width="100%" style="margin-top: 10px;">
                                     <tr>
                                         <td>
                                             <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
@@ -93,14 +90,13 @@
                                     </tr>
                                 </table>
                                 <div class="pl">
-                                    <input id="quanxuan" class="btn_blue" onclick="javascript:btn_xuan(this);" type="button"
+                                    <input id="quanxuan" class="btn_blue" onclick="javascript: btn_xuan(this);" type="button"
                                         value=" 全 选 " runat="server" />
                                     <asp:Button ID="Button2" OnClick="Button2_Click" runat="server" CssClass="btn_blue"
                                         Text=" 删 除 " OnClientClick='javascript:return confirm("删除后将无法恢复，确定删除吗？");'></asp:Button>
                                 </div>
                             </td>
-                            <td width="8" style="background: url(images/tab_15.gif) repeat-y;">
-                                &nbsp;</td>
+                            <td width="8" style="background: url(images/tab_15.gif) right repeat-y;">&nbsp;</td>
                         </tr>
                     </table>
                 </td>
@@ -122,7 +118,8 @@
                                     </webdiyer:AspNetPager>
                                 </div>
                                 <div style="width: 1%; float: left;">
-                                    &nbsp;</div>
+                                    &nbsp;
+                                </div>
                                 <!--分页处结束-->
                             </td>
                             <td width="16">

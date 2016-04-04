@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 
 /// <summary>
 /// ContentPager 的摘要说明
-/// </summary>
+/// </summary>  
 public class ContentPager : System.Web.UI.Page
 {
     /************调用方法*************/
@@ -56,7 +56,7 @@ public class ContentPager : System.Web.UI.Page
     #region 初始化变量
 
     #region 下一页
-    private HyperLink lnknext;//下一页
+    private HyperLink lnknext;
     public HyperLink Lnknext
     {
         get

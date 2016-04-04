@@ -23,9 +23,9 @@ public class TableMemberHelper
     public static  ErrorType VerifyLogin(string user, string passWord)
     {
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("select top 1 m_pwd from {0} where m_name={1}", DBConfig.member, user);
+        sql.AppendFormat("select top 1 m_pwd from {0} where m_name='{1}'", DBConfig.member, user);
         SqlDataReader reader =DBHelper.GetReader(sql.ToString());
-        if (reader.Read())
+        if (reader!=null && reader.Read())
         {
             if (!reader.IsDBNull(0))
             {
@@ -78,12 +78,12 @@ public class TableMemberHelper
     /// </summary>
     /// <param name="userName"></param>
     /// <returns></returns>
-    public static SqlDataReader GetUserInfo(string userName)
+    public static int GetUserInfo(string userName)
     {
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("select top 1 from {0} where m_name={1}", DBConfig.member, userName);
-        SqlDataReader reader = DBHelper.GetReader(sql.ToString());
-        return reader;
+        sql.AppendFormat("select count(1) from {0} where m_name='{1}'", DBConfig.member, userName);
+        int count = DBHelper.GetScalar(sql.ToString());
+        return count;
     }
     #endregion
 
@@ -95,15 +95,12 @@ public class TableMemberHelper
     /// <returns></returns>
     public static ErrorType IsUserExist(string userName)
     {
-        SqlDataReader reader = GetUserInfo(userName);
-        if (reader.Read())
+        int  count = GetUserInfo(userName);
+        if (count>0)
         {
-            if (!reader.IsDBNull(0))
-            {
-                return ErrorType.Success;
-            }
+            return ErrorType.Failed;
         }
-        return ErrorType.Failed;
+        return ErrorType.Success;
     }
     #endregion
 }
