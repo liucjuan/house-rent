@@ -324,3 +324,32 @@
   font-size: 20px;
   cursor: pointer;
 }
+/*租房明细页*/
+.cont_info {
+  border: 1px solid #ddd;
+  border-top: 2px solid #62af00;
+}
+.col-cont {
+  margin-bottom: 15px;
+}
+.title-box {
+  margin: 0 19px 10px;
+  padding: 10px 0 0;
+}
+.title-name {
+  font-size: 22px;
+  font-family: 'Microsoft YaHei', 'SimSun';
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+.title-info-l {
+  float: left;
+}
+.title-info-l li {
+  color: #999;
+  float: left;
+  display: inline;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 20px;
+}
