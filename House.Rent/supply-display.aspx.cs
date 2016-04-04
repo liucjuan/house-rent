@@ -19,7 +19,7 @@ public partial class supply_display : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (Request["id"] == null)
+            if (Request["id"] != null)
             {
                 //try
                 //{
@@ -32,9 +32,9 @@ public partial class supply_display : System.Web.UI.Page
 
                      List<string> fieldList=new List<string>();
                      Dictionary<string, string> whereDic=new Dictionary<string, string>();
-                     if (Request.QueryString["id"]== null)
+                     if (Request.QueryString["id"]!= null)
                      {
-                         whereDic.Add("pro_id", "6");//Request.QueryString["id"]);
+                         whereDic.Add("pro_id",Request.QueryString["id"]);
                      }
                      int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
                 if (count > 0)
