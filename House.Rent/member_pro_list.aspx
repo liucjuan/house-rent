@@ -71,7 +71,7 @@
                                             <td height="30">
                                                 <%#Eval("pro_title") %>
                                             </td>
-                                            <td>
+                                           <td>
                                                 <%#Eval("pro_name") %>
                                             </td>
                                             <td>
@@ -82,7 +82,7 @@
                                                 <%#Eval("pro_num") %>
                                             </td>
                                             <td>
-                                                <%#getclsname(Eval("pro_cls_id").ToString()) %>
+                                                  <%#getclsname(Eval("pro_id").ToString()) %>
                                             </td>
                                             <td>
                                                 <a href="member_pro_add.aspx?id=<%#Eval("pro_id") %>">修改</a> &nbsp;&nbsp;
