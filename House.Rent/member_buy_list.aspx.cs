@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
 
 public partial class member_buy_list : System.Web.UI.Page
 {
@@ -32,14 +33,24 @@ public partial class member_buy_list : System.Web.UI.Page
     private void Bind()
     {
         string name = HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]);
-        string sql = "select m_id from member where m_name='" + name + "'";
-        string con = CommonLib.SqlHelper.SqlConnectionString;
-        string mid = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
-        string where = " where pro_type=2 and m_id=" + mid;
-        string count = "select count(*) from product" + where;
-        AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
-        sql = "select * from product" + where + " order by pro_id desc";
-        CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
+
+        #region 暂时不用
+        //string sql = "select m_id from member where m_name='" + name + "'";
+        //string con = CommonLib.SqlHelper.SqlConnectionString;
+        //string mid = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+        //string where = " where pro_type=2 and m_id=" + mid;
+        //string count = "select count(*) from product" + where;
+        //AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
+        //sql = "select * from product" + where + " order by pro_id desc";
+        //CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1); 
+        #endregion
+
+        AspNetPager1.RecordCount = TableProductHelper.GetCount(name);
+        DataSet ds = TableProductHelper.GetProductInfo(name, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, 2);
+        if (ds != null)
+        {
+            DBHelper.BindRepeater(rep_list, ds);
+        }
     }
     #endregion
 
@@ -77,13 +88,45 @@ public partial class member_buy_list : System.Web.UI.Page
     #region 获取分类
     protected string getclsname(string id)
     {
-        string con = CommonLib.SqlHelper.SqlConnectionString;
-        string sql = "select pro_cls_name from pro_cls where pro_cls_id=" + id;
-        string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
-        sql = "select pro_cls_name from pro_cls where pro_cls_id in "
-            + "(select pro_cls_pid from pro_cls where pro_cls_id=" + id + ")";
-        string name2 = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
-        return name2 + " >> " + name;
+        #region 暂时不用
+        //string con = CommonLib.SqlHelper.SqlConnectionString;
+        //string sql = "select pro_cls_name from pro_cls where pro_cls_id=" + id;
+        //string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+        //sql = "select pro_cls_name from pro_cls where pro_cls_id in "
+        //    + "(select pro_cls_pid from pro_cls where pro_cls_id=" + id + ")";
+        //string name2 = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+        //return name2 + " >> " + name; 
+        #endregion
+
+        List<string> fieldList = new List<string>();
+        Dictionary<string, string> whereDic = new Dictionary<string, string>();
+        fieldList.Add("pro_cls_id");
+        whereDic.Add("pro_id", id);
+        Object value = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.product);
+        if (value != null)
+        {
+            {
+                id = value.ToString();
+                if (id != "0")
+                {
+                    fieldList.Clear();
+                    whereDic.Clear();
+                    fieldList.Add("pro_cls_name");
+                    whereDic.Add("pro_cls_id", id);
+                    Object val = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls);
+                    string name = string.Empty;
+                    if (val != null)
+                    {
+                        name = val.ToString();
+                    }
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        return name;
+                    }
+                }
+            }
+        }
+        return string.Empty;
     }
     #endregion
 }

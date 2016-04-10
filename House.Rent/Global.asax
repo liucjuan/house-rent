@@ -16,7 +16,8 @@
         
     void Application_Error(object sender, EventArgs e) 
     { 
-        // 在出现未处理的错误时运行的代码
+       
+        Exception objErr = Server.GetLastError().GetBaseException(); 
         Response.Redirect("House.Rent/404error.htm");
     }
 
