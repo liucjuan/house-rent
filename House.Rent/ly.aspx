@@ -18,10 +18,21 @@
             <div id="content" class="content">
 
                 <div class="newLxt0">
-                    留言标题:<asp:TextBox ID="TextBox1" runat="server" Width="159px"></asp:TextBox><br />
-                    留言内容:<asp:TextBox ID="TextBox2" runat="server" Height="82px" TextMode="MultiLine"></asp:TextBox><br />
-                    <asp:Button ID="Button1" runat="server" Text="提交留言" OnClick="Button1_Click" />
-
+                    <dl>
+                        <dt>留言标题:</dt>
+                        <dd>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </dd>                        
+                    </dl>
+                    <dl>
+                        <dt>留言内容:</dt>
+                        <dd>
+                            <asp:TextBox ID="TextBox2" runat="server" Height="82px" TextMode="MultiLine"></asp:TextBox>  
+                        </dd>
+                    </dl>
+                    <p>
+                        <asp:Button ID="Button1" runat="server" Text="提交留言" OnClick="Button1_Click" />
+                    </p>
                 </div>
             </div>
             <div id="footer" class="footer">

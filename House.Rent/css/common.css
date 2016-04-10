@@ -176,7 +176,7 @@ input {
   float: right;
 }
 .ScntL {
-  width: 238px;
+  width: 220px;
   float: left;
 }
 /*栏目导航*/
@@ -243,46 +243,56 @@ input {
   color: #000000;
 }
 .ScntR {
-  width: 687px;
-  float: right;
+  margin-left: 240px;
   border: 1px dashed #cccccc;
-  height: auto;
   overflow: hidden;
 }
-.ScntR_title {
-  padding-top: 12px;
-  width: 687px;
-  height: 18px;
+.ScntR .ScntR_title {
+  height: 30px;
+  line-height: 30px;
   border-bottom: 1px solid #cc9900;
   background: url(../images/RtitleBg.gif) repeat-x;
 }
-.ScntR_title1 {
+.ScntR .ScntR_title .ScntR_title1 {
   display: block;
   width: 152px;
   float: left;
   height: 18px;
   padding-left: 12px;
   color: #663300;
-  font-size: 14px;
 }
-.ScntR_title2 {
+.ScntR .ScntR_title .ScntR_title2 {
   float: right;
   display: block;
-  width: 315px;
   height: 18px;
   text-align: right;
   padding-right: 10px;
   color: #666666;
   font-size: 12px;
 }
-.ScntR_title2 a {
+.ScntR .ScntR_title .ScntR_title2 a {
   color: #666666;
   font-size: 12px;
   text-decoration: none;
 }
-.ScntR_title2 a:hover {
+.ScntR .ScntR_title .ScntR_title2 a:hover {
   color: #ff0000;
   text-decoration: none;
+}
+.ScntR input {
+  margin: 10px;
+}
+.ScntR input[type=submit] {
+  width: 100px;
+  background-color: #ff7800;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 36px;
+  border: 0px none;
+  color: #FFFFFF;
+  font-family: "Microsoft Yahei";
+  font-size: 20px;
+  cursor: pointer;
 }
 /*页脚*/
 .footer {
@@ -303,4 +313,11 @@ input {
   font-family: "宋体", Simsun;
   color: #ff0000;
   text-decoration: none;
+}
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
 }
