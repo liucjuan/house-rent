@@ -26,32 +26,51 @@ public partial class System_Sys_Member_Add : System.Web.UI.Page
             //string sql = "select m_id from member where m_name='" + mname + "'";
             //string mid = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
             //
-
             if (Request.QueryString["id"] != null)
             {
                 //SqlDataReader SelectReader(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
 
                 List<string> fieldList = new List<string>();
                 Dictionary<string, string> whereDic = new Dictionary<string, string>();
-                whereDic.Add("pro_id", Request.QueryString["id"]);
+                whereDic.Add("pro_id",Request.QueryString["id"]);
                 DataSet ds = DBHelper.SelectDataSet(fieldList, whereDic, DBConfig.product);
+                ProductModel product=new ProductModel();
+                DBHelper.GetClassInfoAndSetValue<ProductModel>(product,ds);
                 if (ds != null)
                 {
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        pri.Text = dr["pro_pri"].ToString();
-                        num.Text = dr["pro_num"].ToString();
-                        tel.Text = dr["pro_tel"].ToString();
-                        qq.Text = dr["pro_qq"].ToString();
-                        add.Text = dr["pro_add"].ToString();
-                        intro.Text = dr["pro_intro"].ToString();
-                        TextBox1.Text = dr["xq"].ToString();
-                        TextBox2.Text = dr["zx"].ToString();
-                        TextBox3.Text = dr["zlc"].ToString();
-                        TextBox4.Text = dr["szlc"].ToString();
-                        TextBox5.Text = dr["cx"].ToString();
-                        TextBox6.Text = dr["ll"].ToString();
-                        TextBox7.Text = dr["yt"].ToString();
+                        title.Text = product.Pro_title;//dr["pro_title"].ToString();
+                        name.Text = product.Pro_name;// dr["pro_name"].ToString();
+                        edit.Value = product.Pro_img;// dr["pro_img"].ToString();
+                        pri.Text = product.Pro_pri;//dr["pro_pri"].ToString();
+                        num.Text = product.Pro_num.ToString();//   dr["pro_num"].ToString();
+                        tel.Text = product.Pro_tel;//  dr["pro_tel"].ToString();
+                        qq.Text = product.Pro_qq;//dr["pro_qq"].ToString();
+                        add.Text = product.Pro_add;// dr["pro_add"].ToString();
+                        intro.Text = product.Pro_intro;// dr["pro_intro"].ToString();
+                        TextBox1.Text = product.Xq;// dr["xq"].ToString();
+                        TextBox2.Text = product.Zx;// dr["zx"].ToString();
+                        TextBox3.Text = product.Zlc;//dr["zlc"].ToString();
+                        TextBox4.Text = product.Szlc;// dr["szlc"].ToString();
+                        TextBox5.Text = product.Cx;// dr["cx"].ToString();
+                        TextBox6.Text = product.Ll;// dr["ll"].ToString();
+                        TextBox7.Text = product.Yt;//dr["yt"].ToString();
+                        #region 暂时不用
+                        //pri.Text = dr["pro_pri"].ToString();
+                        //num.Text = dr["pro_num"].ToString();
+                        //tel.Text = dr["pro_tel"].ToString();
+                        //qq.Text = dr["pro_qq"].ToString();
+                        //add.Text = dr["pro_add"].ToString();
+                        //intro.Text = dr["pro_intro"].ToString();
+                        //TextBox1.Text = dr["xq"].ToString();
+                        //TextBox2.Text = dr["zx"].ToString();
+                        //TextBox3.Text = dr["zlc"].ToString();
+                        //TextBox4.Text = dr["szlc"].ToString();
+                        //TextBox5.Text = dr["cx"].ToString();
+                        //TextBox6.Text = dr["ll"].ToString();
+                        //TextBox7.Text = dr["yt"].ToString(); 
+                        #endregion
                     }            
                 }
                 else
