@@ -1,4 +1,16 @@
 ﻿@charset "utf-8";
+
+input[type=text]{
+  width: 218px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 36px;
+  border: 1px solid #dcdcdc;
+  color: #FFFFFF;
+  font-family: "Microsoft Yahei";
+  font-size: 20px;
+}
+
 /* CSS Document */
 .Sub_gsjj
 {
@@ -85,15 +97,12 @@
 	text-decoration: none;
 }
 /*产品展示详细页*/
-.cpPic
-{
-	padding-top: 12px;
-	width: 687px;
-	height: 280px;
-	text-align: center;
-}
-.cpPic h6
-{
+.cpPic {
+  padding: 0px 20px;
+  height: 280px;
+  text-align: center;
+
+  h6 {
 	width: 680px;
 	border-bottom: 2px solid #cc9900;
 	text-align: center;
@@ -101,26 +110,30 @@
 	font-size: 14px;
 	margin-bottom: 15px;
 	color: #3366FF;
+  }
 }
-.cpSmg
-{
-	width: 647px;
-	height: auto;
-	margin-top: 15px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	color: #000000;
-	text-align: left;
-	line-height: 22px;
+.cpSmg {
+  padding: 20px;
+  color: #000000;
+  text-align: left;
+  line-height: 22px;
 }
 /*新闻列表*/
 .newLxt0 {
-	clear: both;
-	padding-left: 10px;
-	padding-right: 7px;
-	height: auto;
-	margin-top: 8px;
+  width: 400px;
+  margin: 20px auto;
+  dl{
+	padding: 10px 0px;
+  }
+
+  input[type=submit]{
+	padding: 6px;
+	margin-left: 100px;
+  }
+  textarea{
+	width: 300px;
+	border: 1px solid #dcdcdc;
+  }
 }
 .newLxt {
 	height: auto;
@@ -362,7 +375,8 @@
 /*租房明细页*/
 .cont_info{
   border: 1px solid #ddd;
-  border-top: 2px solid #62af00;
+  //border-top: 2px solid #62af00;
+  border-top: 2px solid #cc9900;
 }
 .col-cont {
   margin-bottom: 15px
@@ -390,4 +404,7 @@
   height: 30px;
   line-height: 30px;
   margin-right: 20px
+}
+.pr-5 {
+  padding-right: 5px
 }
