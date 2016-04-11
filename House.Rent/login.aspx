@@ -11,24 +11,20 @@
     <link href="css/mSlider.css" type="text/css" />
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <link href="css/content.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/fish.1.4.7.js"></script>
-    <script type="text/javascript" src="js/mSlider0.4.2.js"></script>
-
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/jquery.slides.js"></script>
     <script type="text/javascript">
 
-        fish.ready(function () {
-
-            fish.one("#mainslider").mSlider({
-                autoScroll: !0,
-                moveTime: 1500,
-                arrows: !1,
-                aniType: "fade",
-                showNav: "custom",
-                canvas: "#mainslider .bd ul",
-                content: "#mainslider .bd li",
-                userNav: "#mainslider .menu li"
+        $(function () {
+            $('#slides2').slidesjs({
+                width: 940,
+                height: 400,
+                navigation: false,
+                start: 3,
+                play: {
+                    auto: true
+                }
             });
-
         });
 
         function l() {
@@ -79,65 +75,13 @@
             <uc1:top ID="Top1" runat="server" />
             <div class="login-cont">
                 <div id="content" class="content">
-                    <div class="left_content main-slide">
-                        <div class="slide" id="mainslider">
-                            <div class="bd">
-                                <ul id="SliderItems">
-                                    <li style="opacity: 0.01; display: none; left: 0px; top: 0px; z-index: 6; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://www.ly.com//zhuanti/gnyms" title="舌尖上的旅游节">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/03/28/19/l9AkdO.jpg" alt="舌尖上的旅游节" />
-                                        </a>
-                                    </li>
-                                    <li style="opacity: 0.01; display: none; left: 0px; top: 0px; z-index: 5; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://www.ly.com/zhuanti/gnyyujianxm" title="遇见厦门">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/03/31/14/2RFvjf.jpg" alt="遇见厦门" />
-                                        </a>
-                                    </li>
-                                    <li style="opacity: 1; display: block; left: 0px; top: 0px; z-index: 4; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://gny.ly.com/TcSpecialLine/index?refid=154358435" title="同程专线">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/03/29/18/mUXQmE.jpg" alt="同程专线" />
-                                        </a>
-                                    </li>
-                                    <li style="opacity: 0.01; display: none; left: 0px; top: 0px; z-index: 3; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://www.ly.com/zhuanti/gnyziyouxing" title="偏爱自由行">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/03/28/19/Ri3nuY.jpg" alt="偏爱自由行" />
-                                        </a>
-                                    </li>
-                                    <li style="opacity: 0.01; display: none; left: 0px; top: 0px; z-index: 2; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://www.ly.com/zhuanti/gnysrnanjing" title="SR南京">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/04/08/09/P756Yi.jpg" alt="SR南京" />
-                                        </a>
-                                    </li>
-                                    <li style="opacity: 0.01; display: none; left: 0px; top: 0px; z-index: 1; position: absolute;">
-                                        <a rel="nofollow" target="_blank" href="http://gny.ly.com/temai/" title="特卖频道">
-                                            <img src="http://pic4.40017.cn/gny/line/2016/04/08/11/eVXZCd.jpg" alt="特卖频道" />
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="menu">
-                                <ul>
-                                    <li class="">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                    <li class="">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                    <li class="current">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                    <li class="">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                    <li class="">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                    <li class="">
-                                        <a rel="nofollow" href="javascript:;"></a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="left_content">
+                        <div id="slides2">
+                          <img src="images/img/1432605356624.jpg" alt="" />
+                          <img src="images/img/1450337416483_000.jpg" alt="" />
+                          <img src="images/img/1453874574041.jpg" alt="" />
+<%--                          <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+                          <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>--%>
                         </div>
                     </div>
                     <div class="right_content">

@@ -285,9 +285,9 @@
   padding: 50px 0px;
 }
 .login_cont {
-  margin-top: 30px;
   width: 350px;
   height: 300px;
+  margin-top: 18px;
   background: #FFFFFF;
 }
 .login_cont dl {
@@ -358,20 +358,48 @@
 .pr-5 {
   padding-right: 5px;
 }
-.main-slide .slide {
-  width: 790px;
-  height: 290px;
+#slides,
+#slides2,
+#slides3 {
+  display: none;
   position: relative;
-  float: right;
-  overflow: hidden;
-  z-index: 97;
+  z-index: 1;
 }
-.main-slide .slide img {
-  display: block;
-  width: 790px;
-  height: 290px;
+.slidesjs-navigation {
+  margin-top: 3px;
 }
-.main-slide .slide .menu {
+.slidesjs-previous {
+  margin-right: 5px;
+  float: left;
+}
+.slidesjs-next {
+  margin-right: 5px;
+  float: left;
+}
+.slidesjs-pagination {
+  margin: -30px 0 0;
+  list-style: none;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+.slidesjs-pagination li {
+  display: inline-block;
+  height: 18px;
+  width: 25px;
+  text-align: center;
+}
+.slidesjs-pagination li a {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: -1px;
+  text-indent: -9000px;
+}
+.sliderjs-menu {
   position: absolute;
   bottom: 15px;
   text-align: center;
@@ -380,33 +408,17 @@
   line-height: 16px;
   z-index: 98;
 }
-.main-slide .slide .menu ul {
-  height: 18px;
-  overflow: hidden;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  display: inline-block;
-  padding: 0 6px;
-}
-.main-slide .slide .menu li {
-  display: inline-block;
-  height: 18px;
-  width: 25px;
-  text-align: center;
-}
-.main-slide .slide .menu li a {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-top: -1px;
-}
-.main-slide .slide .menu li.current a,
-.main-slide .slide .menu li:hover a {
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
   width: 8px;
   height: 8px;
   background: #fff;
+}
+a:link,
+a:visited {
+  color: #333;
+}
+a:hover,
+a:active {
+  color: #9e2020;
 }
