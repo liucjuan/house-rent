@@ -41,7 +41,7 @@ public partial class index : System.Web.UI.Page
             DataSet ds = new DataSet();
             Dictionary<string, string> whereDic = new Dictionary<string, string>();
             whereDic.Add("pro_type","1");
-            ds=DBHelper.Pagination(15, 1, whereDic, "pro_id", DBConfig.product);
+            ds = DBHelper.Pagination(15, 1, whereDic, "pro_id", DBConfig.product);
             Bind(rep_pro1, ds);
             whereDic.Clear();
 

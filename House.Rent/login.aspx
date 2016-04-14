@@ -16,15 +16,15 @@
     <script type="text/javascript">
 
         $(function () {
-            $('#slides2').slidesjs({
-                width: 940,
-                height: 400,
-                navigation: false,
-                start: 3,
-                play: {
-                    auto: true
-                }
-            });
+            //$('#slides2').slidesjs({
+            //    width: 940,
+            //    height: 400,
+            //    navigation: false,
+            //    start: 3,
+            //    play: {
+            //        auto: true
+            //    }
+            //});
         });
 
         function l() {
@@ -76,13 +76,16 @@
             <div class="login-cont">
                 <div id="content" class="content">
                     <div class="left_content">
-                        <div id="slides2">
+                        <a class="newclub_box" target="_blank" href="javascript:void(0);">
+                        <img src="images/img/JWdQrI.jpg" title="321" alt="321" />
+                        </a>
+<%--                        <div id="slides2">
                           <img src="images/img/1432605356624.jpg" alt="" />
                           <img src="images/img/1450337416483_000.jpg" alt="" />
                           <img src="images/img/1453874574041.jpg" alt="" />
-<%--                          <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-                          <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>--%>
-                        </div>
+                          <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+                          <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+                        </div>--%>
                     </div>
                     <div class="right_content">
                         <div class="login_cont">

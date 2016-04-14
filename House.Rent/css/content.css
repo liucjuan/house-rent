@@ -99,7 +99,6 @@
 }
 /*新闻列表*/
 .newLxt0 {
-  width: 400px;
   margin: 20px auto;
 }
 .newLxt0 dl {
@@ -287,7 +286,7 @@
 .login_cont {
   width: 350px;
   height: 300px;
-  margin-top: 18px;
+  margin-top: 40px;
   background: #FFFFFF;
 }
 .login_cont dl {
