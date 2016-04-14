@@ -13,7 +13,24 @@
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
 
-    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <%--<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>--%>
+    <script src="js/jquery-1.12.2.js" type="text/javascript"></script>
+    <script src="js/jquery.slides.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#slides2').slidesjs({
+                width: 1000,
+                height: 200,
+                navigation: false,
+                start: 3,
+                play: {
+                    auto: true
+                }
+            });
+        });
+
+    </script>
 
 
 </head>
@@ -21,7 +38,15 @@
     <form id="form1" runat="server">
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
-            <div id="content" class="content">
+            <div id="content" class="content">          
+                <div id="slides2">
+                        <img src="images/img/1432605356624.jpg" alt="" />
+                        <img src="images/img/1450337416483_000.jpg" alt="" />
+                        <img src="images/img/1453874574041.jpg" alt="" />
+                        <%--<a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+                        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>--%>
+                    </div>
+                      
                 <div class="CntL">
                     <div class="newBox">
                         <div class="newTitle">
@@ -47,6 +72,7 @@
                     </div>
                 </div>
                 <div class="CntR">
+                    
                     <div class="CntR_Top">
                         <div class="gsjjBox">
                             <div class="gsjjTitle">
