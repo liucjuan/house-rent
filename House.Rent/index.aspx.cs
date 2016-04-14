@@ -50,7 +50,7 @@ public partial class index : System.Web.UI.Page
             Bind(rep_pro2, ds);
             whereDic.Clear();
 
-            whereDic.Add("pro_type", "1");
+            whereDic.Add("pro_type", "2");
             ds = DBHelper.Pagination(6, 1, whereDic, "pro_id", DBConfig.product);
             Bind(rep_pro3, ds);
             whereDic.Clear();

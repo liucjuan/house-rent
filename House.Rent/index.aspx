@@ -54,7 +54,7 @@
                                     <a href="supply.aspx?cls=3" target="_blank">站内新闻</a>
                                 </div>
                                 <div class="more">
-                                    <a href="supply.aspx?cls=2" target="_blank">
+                                    <a href="supply.aspx?cls=3" target="_blank">
                                         <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>
@@ -76,10 +76,10 @@
                         <div class="recruitBox">
                             <div class="reTitle">
                                 <div class="gsjjTitle1">
-                                    <a href="supply-display.aspx?cls=1" target="_blank">出租房源</a>
+                                    <a href="supply.aspx?cls=2" target="_blank">预租房源</a>
                                 </div>
                                 <div class="more">
-                                    <a href="buy.aspx" target="_blank">
+                                    <a href="supply.aspx?cls=2" target="_blank">
                                         <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>

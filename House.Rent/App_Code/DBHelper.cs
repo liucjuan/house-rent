@@ -406,7 +406,7 @@ public class DBHelper
             }
         }
         int sum = pageIndex > 0 ? (pageIndex)*pageSize : 0;
-        sql.AppendFormat("select top {0} * from {1} where 1=1 {2} and {3} not in (select top {4} {3} from {1} order by {3} desc) order by {3} desc", pageSize, tableName, wheres, id, sum);
+        sql.AppendFormat("select top {0} * from {1} where 1=1 {2} order by {3} desc", pageSize, tableName, wheres, id, sum);
         DataSet ds = DBHelper.GetDataSet(sql.ToString());
         if (ds != null)
         {
