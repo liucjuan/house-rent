@@ -3,12 +3,11 @@
 <%@ Register Src="controls/top.ascx" TagName="top" TagPrefix="uc1" %>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>会员登录</title>
-    <link href="css/mSlider.css" type="text/css" />
+    <link href="css/mSlider.css" rel="stylesheet" type="text/css" />
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <link href="css/content.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.12.2.js"></script>

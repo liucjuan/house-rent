@@ -21,10 +21,10 @@
     <div class="nav_cont">
         <ul class="menu">
             <li><a href="index.aspx">网站首页</a></li>
-            <li><a href="supply.aspx?cls=1">出租房源</a></li>
-            <li><a href="ly.aspx?cls=2">在线留言</a></li>
-            <li><a href="supply.aspx?cls=4">预租房源</a></li>
+            <li><a href="supply.aspx?cls=1">出租房源</a></li>            
+            <li><a href="supply.aspx?cls=2">预租房源</a></li>
             <li><a href="supply.aspx?cls=3">站内新闻</a></li>
+            <li><a href="ly.aspx">在线留言</a></li>
         </ul>
         <div class="date">
             <script src="js/date.js" type="text/javascript"></script>
