@@ -8,7 +8,6 @@
     <link type="text/css" href="css/grid.css" rel="stylesheet" />
 
     <script type="text/javascript" src="js/color.js"></script>
-    <script type="text/javascript" src="../js/cls.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
     <script type="text/javascript">
         function sel() {
@@ -128,14 +127,10 @@
                                         <td>
                                             <asp:DropDownList ID="ddl_yi" runat="server" onchange="sel();">
                                                 <asp:ListItem Value="4">预租房源</asp:ListItem>
-
                                                 <asp:ListItem Value="1">出租房源</asp:ListItem>
                                                 <asp:ListItem Value="3">站内新闻</asp:ListItem>
-
                                             </asp:DropDownList>
                                             <asp:HiddenField ID="hidclsid" runat="server" />
-
-                                            <script type="text/javascript">loadcls("ddl_yi", 0, "一级分类"); show();</script>
 
                                         </td>
                                     </tr>

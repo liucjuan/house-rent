@@ -78,7 +78,7 @@ public partial class member_pro_add : System.Web.UI.Page
             {
                 title.Text = product.Pro_title;// dr["pro_title"].ToString();
                 name.Text = product.Pro_name;// dr["pro_name"].ToString();
-                hidclsid.Value = product.Pro_cls_id.ToString();// dr["pro_cls_id"].ToString();
+                //hidclsid.Value = product.Pro_cls_id.ToString();// dr["pro_cls_id"].ToString();
                 edit.Value = product.Pro_img;// dr["pro_img"].ToString();
                 pri.Text = product.Pro_pri;// dr["pro_pri"].ToString();
                 num.Text = product.Pro_num.ToString();// dr["pro_num"].ToString();
@@ -187,7 +187,7 @@ public partial class member_pro_add : System.Web.UI.Page
                 Dictionary<string, string> fieldsAndValue = new Dictionary<string, string>();
                 fieldsAndValue.Add("pro_title",title.Text.Trim());
                 fieldsAndValue.Add("pro_name",name.Text.Trim());
-                fieldsAndValue.Add("pro_cls_id",hidclsid.Value);
+                //fieldsAndValue.Add("pro_cls_id",hidclsid.Value);
                 fieldsAndValue.Add("pro_img",url);
                 fieldsAndValue.Add("pro_pri",pri.Text.Trim());
                 fieldsAndValue.Add("pro_num",kc.ToString());
@@ -253,7 +253,7 @@ public partial class member_pro_add : System.Web.UI.Page
                 Dictionary<string, string> updateDic = new Dictionary<string, string>();
                 updateDic.Add("pro_title",title.Text.Trim());
                 updateDic.Add("pro_name",name.Text.Trim());
-                updateDic.Add("pro_cls_id",hidclsid.Value);
+                //updateDic.Add("pro_cls_id",hidclsid.Value);
                 updateDic.Add("pro_img",url); 
                 updateDic.Add("pro_pri",pri.Text.Trim());
                 updateDic.Add("pro_num",kc.ToString());

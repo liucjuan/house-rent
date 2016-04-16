@@ -56,7 +56,7 @@ public partial class member_pro_add : System.Web.UI.Page
         {
             title.Text = dr["pro_title"].ToString();
             name.Text = dr["pro_name"].ToString();
-            hidclsid.Value = dr["pro_cls_id"].ToString();
+            //hidclsid.Value = dr["pro_cls_id"].ToString();
             edit.Value = dr["pro_img"].ToString();
             pri.Text = dr["pro_pri"].ToString();
             num.Text = dr["pro_num"].ToString();
@@ -126,7 +126,7 @@ public partial class member_pro_add : System.Web.UI.Page
                 Dictionary<string, string> fieldsAndValue = new Dictionary<string, string>();
                 fieldsAndValue.Add("pro_title", title.Text.Trim());
                 fieldsAndValue.Add("pro_name", name.Text.Trim());
-                fieldsAndValue.Add("pro_cls_id", hidclsid.Value);
+                //fieldsAndValue.Add("pro_cls_id", hidclsid.Value);
                 fieldsAndValue.Add("pro_img", url);
                 fieldsAndValue.Add("pro_pri", pri.Text.Trim());
                 fieldsAndValue.Add("pro_num", kc.ToString());
@@ -212,7 +212,7 @@ public partial class member_pro_add : System.Web.UI.Page
                 Dictionary<string, string> updateDic = new Dictionary<string, string>();
                 updateDic.Add("pro_title",title.Text.Trim());
                 updateDic.Add("pro_name",name.Text.Trim());
-                updateDic.Add("pro_cls_id",hidclsid.Value);
+                //updateDic.Add("pro_cls_id",hidclsid.Value);
                 updateDic.Add("pro_img",url); 
                 updateDic.Add("pro_pri",pri.Text.Trim());
                 updateDic.Add("pro_num",kc.ToString());

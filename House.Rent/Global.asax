@@ -18,7 +18,7 @@
     { 
        
         Exception objErr = Server.GetLastError().GetBaseException(); 
-        Response.Redirect("House.Rent/404error.htm");
+        //Response.Redirect("House.Rent/404error.htm");
     }
 
     void Session_Start(object sender, EventArgs e) 

@@ -119,38 +119,38 @@ public partial class member_pro_list : System.Web.UI.Page
     //    return name2 + " >> " + name;
     //}
 
-    protected string getclsname(string id)
-    {
+    //protected string getclsname(string id)
+    //{
 
-        List<string> fieldList = new List<string>();
-        Dictionary<string, string> whereDic = new Dictionary<string, string>();
-        fieldList.Add("pro_cls_id");
-        whereDic.Add("pro_id", id);
-        Object value = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.product);
-        if (value != null)
-        {
-            {
-                id = value.ToString();
-                if (id != "0")
-                {
-                    fieldList.Clear();
-                    whereDic.Clear();
-                    fieldList.Add("pro_cls_name");
-                    whereDic.Add("pro_cls_id", id);
-                    Object val = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls);
-                    string name = string.Empty;
-                    if (val != null)
-                    {
-                        name = val.ToString();
-                    }
-                    if (!string.IsNullOrEmpty(name))
-                    {
-                        return name;
-                    }
-                }
-            }
-        }
-        return "<span style=\"color:#ff0000\">物品已删除</span>";
-    }
+    //    List<string> fieldList = new List<string>();
+    //    Dictionary<string, string> whereDic = new Dictionary<string, string>();
+    //    fieldList.Add("pro_cls_id");
+    //    whereDic.Add("pro_id", id);
+    //    Object value = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.product);
+    //    if (value != null)
+    //    {
+    //        {
+    //            id = value.ToString();
+    //            if (id != "0")
+    //            {
+    //                fieldList.Clear();
+    //                whereDic.Clear();
+    //                fieldList.Add("pro_cls_name");
+    //                whereDic.Add("pro_cls_id", id);
+    //                Object val = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls);
+    //                string name = string.Empty;
+    //                if (val != null)
+    //                {
+    //                    name = val.ToString();
+    //                }
+    //                if (!string.IsNullOrEmpty(name))
+    //                {
+    //                    return name;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    return "<span style=\"color:#ff0000\">物品已删除</span>";
+    //}
     #endregion
 }

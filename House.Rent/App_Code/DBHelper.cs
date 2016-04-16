@@ -297,9 +297,16 @@ public class DBHelper
             List<string> fieldsEquValueList = GetDictionaryKeyAndValue(updateDic);
             if (fieldsEquValueList != null && fieldsEquValueList.Count>0)
             {
-                foreach (string item in fieldsEquValueList)
+                for (int i = 0; i < fieldsEquValueList.Count; i++ )
                 {
-                    fieldsEquValue += item + " ";
+                    if (i == 0)
+                    {
+                        fieldsEquValue += fieldsEquValueList[i];
+                    }
+                    else
+                    {
+                        fieldsEquValue += "," + fieldsEquValueList[i];
+                    }
                 }
             }
         }

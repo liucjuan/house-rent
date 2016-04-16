@@ -255,8 +255,9 @@ input {
 }
 .ScntR {
   margin-left: 240px;
-  border: 1px dashed #cccccc;
+  border: 1px solid #dcdcdc;
   overflow: hidden;
+  min-height: 462px;
 }
 .ScntR .ScntR_title {
   height: 30px;

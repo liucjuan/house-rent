@@ -12,14 +12,14 @@ using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 using Model;
 
-public partial class System_Sys_Member_Add : System.Web.UI.Page
+public partial class product_Add : System.Web.UI.Page
 {
     protected string con = CommonLib.SqlHelper.SqlConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            CommonLib.SqlHelper.islogin(Page);
+            //CommonLib.SqlHelper.islogin(Page);
             //#region 会员编号
             //string mname = HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]);
             //string con = CommonLib.SqlHelper.SqlConnectionString;
