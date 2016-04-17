@@ -25,7 +25,6 @@
 .productsBox select {
   margin: 10px;
   border: 1px solid #dddddd;
-  width: 218px;
   background: #fff;
   color: #333;
   padding: 6px 0 5px 5px;
@@ -557,4 +556,10 @@ a:active {
 .houseList .list .info .time {
   display: inline-block;
   margin: 1px 0 0 2px;
+}
+.grid th {
+  line-height: 30px;
+}
+.grid td {
+  line-height: 30px;
 }

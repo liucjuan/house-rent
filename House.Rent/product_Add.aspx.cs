@@ -169,7 +169,8 @@ public partial class product_Add : System.Web.UI.Page
                 fieldsAndValue.Add("pro_add", add.Text.Trim());
                 fieldsAndValue.Add("pro_intro", intro.Text.Trim());
                 fieldsAndValue.Add("pro_type", ddl_yi.SelectedValue.ToString());
-                fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                //fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy/mm/dd HH:mm:ss"));
                 fieldsAndValue.Add("xq", TextBox1.Text);
                 fieldsAndValue.Add("zx", TextBox2.Text);
                 fieldsAndValue.Add("zlc", TextBox3.Text);

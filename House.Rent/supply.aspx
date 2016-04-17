@@ -74,15 +74,15 @@
                                         <a href="supply-display.aspx?id=<%#Eval("pro_id") %>" target="_blank" title="<%#Eval("pro_title") %>"><%#Eval("pro_title") %></a>
                                     </p>
                                     <p class="font16 mt20 bold">
-                                        合租次卧<span class="splitline">|</span>5户合租<span class="splitline">|</span>15㎡<span class="splitline">|</span>12/23层<span class="splitline">|</span>朝南北
+                                        <%#Eval("pro_name") %><span class="splitline">|</span><%#Eval("pro_num") %>㎡<span class="splitline">|</span><%#Eval("zx") %><span class="splitline">|</span><%#Eval("szlc") %>/<%#Eval("zlc") %>层<span class="splitline">|</span>朝<%#Eval("cx") %>
                                     </p>
-                                    <p class="gray6 mt20"><span>园区</span>-<span>湖东</span>-<span>湖畔天城</span> </p>
-                                    <p class="mt12"><span class="note subInfor">距1号线<a href="/house1-j0120-k01929/">南施街</a>约895米。</span></p>
+                                    <p class="gray6 mt20"><span><%#Eval("xq") %></span> </p>
+                                    <p class="mt12"><span class="note subInfor"><%#Eval("pro_add") %></span></p>
                                     <p class="gray6 mt15" style="line-height: 16px;">
                                         <span class="gray9 pr10"><%#Eval("pro_date","{0:yyyy-MM-dd hh:mm:ss}") %>更新</span>
                                     </p>
                                     <div class="moreInfo">
-                                        <p class="mt5 alingC"><span class="price">680</span>元/月</p>
+                                        <p class="mt5 alingC"><span class="price"><%#Eval("pro_pri") %></span>元/月</p>
                                     </div>
                                 </dd>
                             </dl>

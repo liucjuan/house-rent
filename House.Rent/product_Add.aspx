@@ -114,14 +114,12 @@
                                 <td>
                                     <asp:DropDownList ID="ddl_yi" runat="server" onchange="sel();">
                                         <asp:ListItem Value="4">预租房源</asp:ListItem>
-
                                         <asp:ListItem Value="1">出租房源</asp:ListItem>
                                         <asp:ListItem Value="3">站内新闻</asp:ListItem>
 
                                     </asp:DropDownList>
                                     <asp:HiddenField ID="hidclsid" runat="server" />
 
-                                    <script type="text/javascript">loadcls("ddl_yi", 0, "一级分类"); show();</script>
 
                                 </td>
                             </tr>
@@ -134,7 +132,7 @@
                                 </td>
                             </tr>
                             <tr id="a3" runat="server">
-                                <td width="80" align="right" height="30">售价：
+                                <td width="80" align="right" height="30">租金：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="pri" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
