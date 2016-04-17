@@ -15,6 +15,8 @@ using Model;
 public partial class product_Add : System.Web.UI.Page
 {
     protected string con = CommonLib.SqlHelper.SqlConnectionString;
+    private string pro_id = string.Empty; 
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -28,7 +30,9 @@ public partial class product_Add : System.Web.UI.Page
             //
             if (Request.QueryString["id"] != null)
             {
-                //SqlDataReader SelectReader(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+                //SqlDataReader SelectReader(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)'
+
+                pro_id = Request.QueryString["id"];
 
                 List<string> fieldList = new List<string>();
                 Dictionary<string, string> whereDic = new Dictionary<string, string>();
@@ -42,6 +46,7 @@ public partial class product_Add : System.Web.UI.Page
                     {
                         title.Text = product.Pro_title;//dr["pro_title"].ToString();
                         name.Text = product.Pro_name;// dr["pro_name"].ToString();
+                        ddl_yi.SelectedValue = product.Pro_type.ToString();
                         edit.Value = product.Pro_img;// dr["pro_img"].ToString();
                         pri.Text = product.Pro_pri;//dr["pro_pri"].ToString();
                         num.Text = product.Pro_num.ToString();//   dr["pro_num"].ToString();
@@ -121,14 +126,14 @@ public partial class product_Add : System.Web.UI.Page
         string[] exts = {".jpg", ".gif", ".png", ".bmp", ".jpeg"};
         if (FileUpload1.HasFile)
         {
-            path = CommonLib.FileHelper.UploadFile(FileUpload1, "../upload/", 1024*2, exts, Page);
+            path = CommonLib.FileHelper.UploadFile(FileUpload1, "upload/", 1024 * 2, exts, Page);
             if (path == "")
             {
                 state = -1;
             }
             else
             {
-                url = path.Replace("../upload/", "");
+                url = path.Replace("../upload/", "").Replace("upload/","");
             }
         }
         else
@@ -170,7 +175,7 @@ public partial class product_Add : System.Web.UI.Page
                 fieldsAndValue.Add("pro_intro", intro.Text.Trim());
                 fieldsAndValue.Add("pro_type", ddl_yi.SelectedValue.ToString());
                 //fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy/mm/dd HH:mm:ss"));
+                fieldsAndValue.Add("pro_date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                 fieldsAndValue.Add("xq", TextBox1.Text);
                 fieldsAndValue.Add("zx", TextBox2.Text);
                 fieldsAndValue.Add("zlc", TextBox3.Text);
@@ -181,7 +186,7 @@ public partial class product_Add : System.Web.UI.Page
                 ErrorType errorType = DBHelper.AddData(fieldsAndValue, DBConfig.product);
                 if (errorType == ErrorType.Success)
                 {
-                    CommonLib.JavaScriptHelper.AlertAndRedirect("添加成功", "Sys_Product_List.aspx", Page);
+                    CommonLib.JavaScriptHelper.AlertAndRedirect("添加成功", "product_List.aspx", Page);
                 }
                 else
                 {
@@ -240,10 +245,15 @@ public partial class product_Add : System.Web.UI.Page
                 {
                     if (FileUpload1.HasFile)
                     {
-                        System.IO.File.Delete(Server.MapPath("~/upload/" + edit.Value));
+                        try
+                        {
+                            System.IO.File.Delete(Server.MapPath("~/upload/" + edit.Value));
+                        }catch(Exception ex){
+                            Console.WriteLine(ex.ToString());                            
+                        }
                         edit.Value = url;
                     }
-                    CommonLib.JavaScriptHelper.AlertAndRedirect("修改成功", "member_buy_list.aspx", Page);
+                    CommonLib.JavaScriptHelper.AlertAndRedirect("修改成功", "product_list.aspx", Page);
                 }
                 else
                 {

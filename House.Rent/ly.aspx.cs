@@ -21,7 +21,13 @@ public partial class supply : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string mname = HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]);
+        string mname = string.Empty;
+
+        if (Request.Cookies["buy"] != null)
+        {
+            mname = HttpUtility.UrlDecode(Request.Cookies["buy"]["user"]);
+        }
+        
         //string sql = "insert into liuyan(title,uid,contents)values('" + TextBox1.Text + "','" + mname + "','" + TextBox2.Text + "')";
         //CommonLib.SqlHelper.ExecuteNonQuery(con, CommandType.Text, sql, null);
         //CommonLib.JavaScriptHelper.Alert("留言成功", Page);

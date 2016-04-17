@@ -54,7 +54,7 @@
                                     <asp:Button ID="Button1" runat="server" Text="查询" OnClick="Button1_Click" />
                                     <asp:GridView ID="GridView1" runat="server" CssClass="grid" AutoGenerateColumns="False"
                                         Width="100%" BorderWidth="0px" CellPadding="0" CellSpacing="0"
-                                        onmouseover="changeto()" onmouseout="changeback()">
+                                        onmouseover="changeto()" onmouseout="changeback()" OnRowCommand="rep_list_ItemCommand">
                                         <Columns>
                                             <asp:BoundField DataField="pro_id" HeaderText="编号">
                                                 <ItemStyle HorizontalAlign="Center" Width="60px" />
@@ -81,6 +81,13 @@
                                             <asp:TemplateField HeaderText="发布时间">
                                                 <ItemTemplate>
                                                     <%#Eval("pro_date","{0:d}")%>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="操作">
+                                                <ItemTemplate>
+                                                    <a href="product_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright">修改</a>
+                                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%#Eval("pro_id") %>'
+                                                    CommandName="del" OnClientClick='javascript:return confirm("确定删除？");'>删除</asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>

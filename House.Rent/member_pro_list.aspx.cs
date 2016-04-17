@@ -43,7 +43,7 @@ public partial class member_pro_list : System.Web.UI.Page
         //CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
 
         AspNetPager1.RecordCount = TableProductHelper.GetCount(name);
-        DataSet ds = TableProductHelper.GetProductInfo(name, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1,1);
+        DataSet ds = TableProductHelper.GetProductInfo(name, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1,7);
         if (ds != null)
         {
             DBHelper.BindRepeater(rep_list, ds);

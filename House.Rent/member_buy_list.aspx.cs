@@ -46,7 +46,7 @@ public partial class member_buy_list : System.Web.UI.Page
         #endregion
 
         AspNetPager1.RecordCount = TableProductHelper.GetCount(name);
-        DataSet ds = TableProductHelper.GetProductInfo(name, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, 2);
+        DataSet ds = TableProductHelper.GetProductInfo(name, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, 6);
         if (ds != null)
         {
             DBHelper.BindRepeater(rep_list, ds);

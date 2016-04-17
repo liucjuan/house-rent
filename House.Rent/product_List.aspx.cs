@@ -93,4 +93,28 @@ public partial class product_List : System.Web.UI.Page
 
         CommonLib.SqlHelper.BindGridView(GridView1, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
     }
+
+    #region 删除
+    protected void rep_list_ItemCommand(object source, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "del")
+        {
+            string sql = "select pro_img from product where pro_id=" + e.CommandArgument;
+            string path = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+            sql = "delete from product where pro_id=" + e.CommandArgument;
+            try
+            {
+                CommonLib.SqlHelper.ExecuteNonQuery(con, CommandType.Text, sql, null);
+                Bind();
+                try { System.IO.File.Delete(Server.MapPath("~/upload/" + path)); }
+                catch { }
+                CommonLib.JavaScriptHelper.Alert("删除成功", Page);
+            }
+            catch
+            {
+                CommonLib.JavaScriptHelper.Alert("删除失败", Page);
+            }
+        }
+    }
+    #endregion
 }

@@ -196,7 +196,7 @@ public partial class member_pro_add : System.Web.UI.Page
                 fieldsAndValue.Add("pro_add",add.Text.Trim());
                 fieldsAndValue.Add("pro_intro",intro.Text.Trim());
                 fieldsAndValue.Add("m_id",mid);
-                fieldsAndValue.Add("pro_type","1");
+                fieldsAndValue.Add("pro_type","7");
                 fieldsAndValue.Add("pro_date", DateTime.Now.ToString());
                 ErrorType errorType = DBHelper.AddData(fieldsAndValue, DBConfig.product);
                 if (errorType == ErrorType.Success)

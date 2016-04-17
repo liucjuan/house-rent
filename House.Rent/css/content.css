@@ -526,12 +526,12 @@ a:active {
   position: relative;
   z-index: 1;
 }
-.houseList .list .img a {
-  float: left;
-}
 .houseList .list .img img {
   width: 250px;
   height: 180px;
+}
+.houseList .list .img a {
+  float: left;
 }
 .houseList .list .info {
   padding-left: 298px;
@@ -541,6 +541,9 @@ a:active {
   color: #333;
   font-size: 14px;
   font-weight: 700;
+}
+.houseList .list .info.znxw {
+  padding-left: 10px;
 }
 .houseList .list .title {
   font-size: 22px;
@@ -557,9 +560,14 @@ a:active {
   display: inline-block;
   margin: 1px 0 0 2px;
 }
+.grid a {
+  color: #0055bb;
+  margin-right: 15px;
+}
 .grid th {
   line-height: 30px;
 }
 .grid td {
   line-height: 30px;
+  text-align: center;
 }

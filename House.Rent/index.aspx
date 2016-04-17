@@ -101,7 +101,7 @@
                         <div class="recruitBox">
                             <div class="reTitle">
                                 <div class="gsjjTitle1">
-                                    <a href="supply.aspx?cls=2" target="_blank">预租房源</a>
+                                    <a href="supply.aspx?cls=2" target="_blank">房源出售</a>
                                 </div>
                                 <div class="more">
                                     <a href="supply.aspx?cls=2" target="_blank">

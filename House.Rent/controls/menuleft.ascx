@@ -10,7 +10,7 @@
             <li><a href="member_index.aspx">个人资料</a></li>
             <li><a href="member_pwd.aspx">修改密码</a></li>
             <li><a href="product_add.aspx">发布租房信息</a></li>
-            <li><a href="product_list.aspx">房源信息</a></li>
+            <li><a href="product_list.aspx">房源信息管理</a></li>
             <li><a href="member_pro_add.aspx">添加交易物品</a></li>
             <li><a href="member_pro_list.aspx">交易物品管理</a></li>
             <li><a href="member_buy_add.aspx">发布求购</a></li>

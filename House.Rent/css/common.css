@@ -19,6 +19,9 @@ body {
 input {
   font-size: 14px;
 }
+.none {
+  display: none;
+}
 .top .top_cont {
   width: 1000px;
   margin: 0px auto;

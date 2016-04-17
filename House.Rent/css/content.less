@@ -545,42 +545,46 @@ a:active {
 
 .houseList {
   padding: 0 20px 20px;
-  background: #fff
-}
+  background: #fff;
+  .list{
+	border-bottom: 1px dashed #e3e3e3;
+	padding: 20px 0;
 
-.houseList .list {
-  border-bottom: 1px dashed #e3e3e3;
-  padding: 20px 0
-}
+	.img {
+	  position: relative;
+	  z-index: 1;
 
-.houseList .list .img {
-  position: relative;
-  z-index: 1
-}
+	  img {
+		width: 250px;
+		height: 180px;
+	  }
 
-.houseList .list .img a {
-  float: left
-}
+	  a {
+		float: left
+	  }
+	}
 
-.houseList .list .img img {
-  width: 250px;
-  height: 180px;
-}
+	.info{
+	  padding-left: 298px;
+	  position: relative;
 
-.houseList .list .info {
-  padding-left: 298px;
-  position: relative
-}
+	  .txt {
+		color: #333;
+		font-size: 14px;
+		font-weight: 700
+	  }
 
-.houseList .list .info .txt {
-  color: #333;
-  font-size: 14px;
-  font-weight: 700
-}
+	  &.znxw{
+		padding-left: 10px;
+	  }
 
-.houseList .list .title {
-  font-size: 22px;
-  font-weight: 700
+	}
+	.title {
+	  font-size: 22px;
+	  font-weight: 700
+	}
+
+  }
 }
 
 .houseList .list .info .moreInfo {
@@ -597,10 +601,15 @@ a:active {
 }
 
 .grid{
+  a{
+	color: #0055bb;
+	margin-right: 15px;
+  }
   th{
 	line-height: 30px;
   }
   td{
 	line-height: 30px;
+	text-align: center;
   }
 }

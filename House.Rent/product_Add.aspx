@@ -13,60 +13,6 @@
 
     <script type="text/javascript" src="js/color.js"></script>
     <script type="text/javascript" src="js/cls.js"></script>
-    <script type="text/javascript">
-        function sel() {
-            var a1 = document.getElementById("a1");
-            var a2 = document.getElementById("a2");
-            var a3 = document.getElementById("a3");
-            var a4 = document.getElementById("a4");
-            var a5 = document.getElementById("a5");
-            var a6 = document.getElementById("a6");
-            var a7 = document.getElementById("a7");
-            var a8 = document.getElementById("a8");
-            var a9 = document.getElementById("a9");
-            var a10 = document.getElementById("a10");
-            var a11 = document.getElementById("a11");
-            var a12 = document.getElementById("a12");
-            var a13 = document.getElementById("a13");
-            var a14 = document.getElementById("a14");
-            var ddl_yi = document.getElementById("ddl_yi");
-
-            if (ddl_yi.value == "3") {
-
-                a1.style.display = 'none';
-                a2.style.display = 'none';
-                a3.style.display = 'none';
-                a4.style.display = 'none';
-                a5.style.display = 'none';
-                a6.style.display = 'none';
-                a7.style.display = 'none';
-                a8.style.display = 'none';
-                a9.style.display = 'none';
-                a10.style.display = 'none';
-                a11.style.display = 'none';
-                a12.style.display = 'none';
-                a13.style.display = 'none';
-                a14.style.display = 'none';
-
-            }
-            else {
-                a1.style.display = '';
-                a2.style.display = '';
-                a3.style.display = '';
-                a4.style.display = '';
-                a5.style.display = '';
-                a6.style.display = '';
-                a7.style.display = '';
-                a8.style.display = '';
-                a9.style.display = '';
-                a10.style.display = '';
-                a11.style.display = '';
-                a12.style.display = '';
-                a13.style.display = '';
-                a14.style.display = '';
-            }
-        }
-    </script>
 </head>
 <body>
 
@@ -112,15 +58,13 @@
                                 <td width="80" align="right" height="30">类型：
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="ddl_yi" runat="server" onchange="sel();">
-                                        <asp:ListItem Value="4">预租房源</asp:ListItem>
+                                    <asp:DropDownList ID="ddl_yi" runat="server">
                                         <asp:ListItem Value="1">出租房源</asp:ListItem>
-                                        <asp:ListItem Value="3">站内新闻</asp:ListItem>
-
+                                        <asp:ListItem Value="2">出售房源</asp:ListItem>
+                                        <asp:ListItem Value="4">求租房源</asp:ListItem>
+                                        <asp:ListItem Value="5">求购房源</asp:ListItem>
                                     </asp:DropDownList>
                                     <asp:HiddenField ID="hidclsid" runat="server" />
-
-
                                 </td>
                             </tr>
                             <tr id="a2" runat="server">
@@ -132,7 +76,8 @@
                                 </td>
                             </tr>
                             <tr id="a3" runat="server">
-                                <td width="80" align="right" height="30">租金：
+                                <td width="80" align="right" height="30">
+                                    租金/售价：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="pri" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
@@ -210,7 +155,8 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><asp:Button ID="Button1" runat="server" Text="提交" OnClick="Button1_Click" OnClientClick="javascript:return kong();" /></td>
+                                <td>
+                                    <asp:Button ID="Button1" runat="server" Text="提交" OnClick="Button1_Click" OnClientClick="javascript:return kong();" /></td>
                             </tr>
                         </table>
                     </div>

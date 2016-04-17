@@ -41,19 +41,13 @@ public partial class System_Sys_Product_List : System.Web.UI.Page
         string sql = "";
         if (Request.QueryString["cls"] != null)
         {
-            count = "select count(*) from product where pro_type=1 or pro_type=2";
+            count = "select count(*) from product where pro_type=1 or pro_type=2 or pro_type=4 or pro_type=5";
+            sql = "select * from product where pro_type=1 or pro_type=2 or pro_type=4 or pro_type=5 order by pro_id desc";
         }
         else
         {
-            count = "select count(*) from product";
-        }
-        if (Request.QueryString["cls"] != null)
-        {
-            sql = "select * from product where pro_type=1 or pro_type=2  order by pro_id desc";
-        }
-        else
-        {
-            sql = "select * from product where pro_type=1 or pro_type=2 order by pro_id desc";
+            count = "select count(*) from product where pro_type=1 or pro_type=2 or pro_type=4 or pro_type=5";
+            sql = "select * from product where pro_type=1 or pro_type=2 or pro_type=4 or pro_type=5 order by pro_id desc";
         }
         AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
        

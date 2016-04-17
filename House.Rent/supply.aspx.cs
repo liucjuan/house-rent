@@ -70,6 +70,12 @@ public partial class supply : System.Web.UI.Page
     #region 绑定列表
     private void Bind()
     {
+        string pro_type = string.Empty;
+
+        if (Request["cls"] != null)
+        {
+            pro_type = Request.QueryString["cls"];
+        }
         #region 暂时不用
         //string where = "";
         //if (Request["cls"] != null)
@@ -85,12 +91,16 @@ public partial class supply : System.Web.UI.Page
 
         List<string> fieldList=new List<string>();
         Dictionary<string, string> whereDic=new Dictionary<string, string>();
-        if (Request["cls"] != null)
+        if (!string.IsNullOrEmpty(pro_type))
         {
             whereDic.Add("pro_type",Request.QueryString["cls"]);
         }
-        int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
-        AspNetPager1.RecordCount = count;
+        string count = "select count(*) from product where pro_type='" + pro_type + "'";
+        //string sql = "select * from product where pro_type='" + pro_type + "' order by pro_id desc";
+        AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
+
+        //int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
+        //AspNetPager1.RecordCount = count;
         DataSet ds = DBHelper.Pagination(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1, whereDic, "pro_id", DBConfig.product);
         DBHelper.BindRepeater(rep_list,ds);
 
