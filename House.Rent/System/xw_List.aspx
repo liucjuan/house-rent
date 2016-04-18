@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Sys_Product_List.aspx.cs"
-    Inherits="System_Sys_Product_List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="xw_List.aspx.cs" Inherits="xw_List" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <title>房源管理</title>
+    <title>站内新闻</title>
     <link type="text/css" href="css/grid.css" rel="stylesheet" />
 
     <script type="text/javascript" src="js/quanxuan.js"></script>
@@ -36,7 +35,10 @@
                                                         </div>
                                                     </td>
                                                     <td width="95%">
-                                                        <b>你当前的位置</b>：[<a href="sys_product_list.aspx">房源信息</a>][<a href="product_Add.aspx">添加房源</a>]</td>
+                                                        <b>你当前的位置</b>：
+                                                        [<a href="xw_list.aspx">站内新闻</a>]
+                                                        [<a href="xw_Add.aspx">添加站内新闻</a>]
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -70,7 +72,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="标题">
                                                         <ItemTemplate>
-                                                            <a href="product_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright"><%#Eval("pro_title") %></a>
+                                                            <a href="xw_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright"><%#Eval("pro_title") %></a>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="pro_name" HeaderText="房源户型" />
@@ -100,7 +102,7 @@
                                                     <asp:TemplateField HeaderText="操作">
                                                         <ItemTemplate>
 
-                                                            <a href="product_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright">编辑</a>
+                                                            <a href="xw_Add.aspx?id=<%#Eval("pro_id") %>" target="frmright">编辑</a>
                                                             <img src="images/edt.gif" alt="" width="16" height="16" />
 
                                                             <asp:LinkButton ID="LinkButton2" runat="server" CommandName="check" CommandArgument='<%# Eval("pro_id") %>'>审核</asp:LinkButton>

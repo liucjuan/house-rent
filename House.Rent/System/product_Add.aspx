@@ -71,7 +71,7 @@
                                         <td width="80" align="right" height="30">类型：
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="ddl_yi" runat="server">                                                
+                                            <asp:DropDownList ID="ddl_yi" runat="server">
                                                 <asp:ListItem Value="1">出租房源</asp:ListItem>
                                                 <asp:ListItem Value="2">出售房源</asp:ListItem>
                                                 <asp:ListItem Value="4">预租房源</asp:ListItem>

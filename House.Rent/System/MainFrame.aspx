@@ -51,10 +51,10 @@
                             <div class="menu_div">
                             </div>
                         </li>
-                        <li id="menu_3" onclick="getleftbar(this,'sys_product_list.aspx?cls=2');"><a>站内新闻</a>
+                        <li id="menu_3" onclick="getleftbar(this,'xw_list.aspx?cls=3');"><a>站内新闻</a>
                             <div class="menu_childs">
                                 <ul>
-                                    <li><a href="sys_product_list.aspx?cls=2" target="frmright">站内新闻</a></li>
+                                    <li><a href="xw_list.aspx?cls=3" target="frmright">站内新闻</a></li>
                                     <li><a href="xw_Add.aspx?cls=9" target="frmright">发布站内新闻</a></li>
                                 </ul>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="menu_div">
                             </div>
                         </li>
-                        <li id="menu_4" onclick="getleftbar(this,'sys_log_list.aspx');"><a href="sys_log_list.aspx" target="frmright">租房记录</a>
+                        <%--<li id="menu_4" onclick="getleftbar(this,'sys_log_list.aspx');"><a href="sys_log_list.aspx" target="frmright">租房记录</a>
                             <div class="menu_childs">
                                 <ul>
                                     <li><a href="sys_log_list.aspx" target="frmright">租房记录</a></li>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="menu_div">
                             </div>
-                        </li>
+                        </li>--%>
                         <li id="menu_6" onclick="getleftbar(this,'sys_revise_pwd.aspx');"><a>修改密码</a>
                             <div class="menu_childs">
                                 <ul>

@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/color.js"></script>
     <script type="text/javascript" src="../js/cls.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
-    <script>
+    <script type="text/javascript">
         function sel() {
             var a1 = document.getElementById("a1");
             var a2 = document.getElementById("a2");
@@ -109,9 +109,7 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="ddl_yi" runat="server">
-
                                                 <asp:ListItem Value="3">站内新闻</asp:ListItem>
-
                                             </asp:DropDownList>
                                             <asp:HiddenField ID="hidclsid" runat="server" />
 

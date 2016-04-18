@@ -16,7 +16,9 @@
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
             <div id="content" class="content">
-
+                <div>
+                    <img src="images/img/1459491039032.png" alt="" />
+                </div>
                 <div class="newLxt0">
                     <dl>
                         <dt>留言标题:</dt>

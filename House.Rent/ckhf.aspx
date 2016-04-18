@@ -25,8 +25,8 @@
                 <div class="ScntR">
                     <div class="ScntR_title">
                         <span class="ScntR_title1">
-                            <img src="images/icon4.gif" align="absmiddle" style="margin-right: 8px;" />求购信息</span>
-                        <span class="ScntR_title2">你现在的位置：<a href="/">首页&nbsp;&gt;&nbsp;</a><a href="member_buy_add.aspx<%=Request["id"]!=null?"?id="+Request["id"]:"" %>"><%=Request["id"]!=null?"修改":"添加" %>求购信息</a></span>
+                            <img src="images/icon4.gif" align="absmiddle" style="margin-right: 8px;" />查看留言</span>
+                        <span class="ScntR_title2">你现在的位置：<a href="/">首页&nbsp;&gt;&nbsp;</a><a href="ly.aspx<%=Request["id"]!=null?"?id="+Request["id"]:"" %>"><%=Request["id"]!=null?"修改":"添加" %>留言信息</a></span>
                     </div>
                     <div class="productsBox">
 

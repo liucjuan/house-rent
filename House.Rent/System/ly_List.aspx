@@ -35,7 +35,10 @@
                                                             <img src="images/tb.gif" width="16" height="16" />
                                                         </div>
                                                     </td>
-                                                    <td width="95%"></td>
+                                                    <td width="95%">
+                                                         <b>你当前的位置</b>：
+                                                        [<a href="xw_list.aspx">留言管理</a>]
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </td>

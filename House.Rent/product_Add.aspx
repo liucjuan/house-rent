@@ -41,21 +41,21 @@
 
                         <table width="90%">
                             <tr>
-                                <td width="80" align="right" height="30">标题：
+                                <td align="right" height="30">标题：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="title" runat="server" CssClass="login_txt" MaxLength="200"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr id="a1" runat="server">
-                                <td width="80" align="right" height="30">户型：
+                                <td align="right" height="30">户型：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="name" runat="server" CssClass="login_txt" MaxLength="200"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="80" align="right" height="30">类型：
+                                <td align="right" height="30">类型：
                                 </td>
                                 <td>
                                     <asp:DropDownList ID="ddl_yi" runat="server">
@@ -68,7 +68,7 @@
                                 </td>
                             </tr>
                             <tr id="a2" runat="server">
-                                <td width="80" align="right" height="30">图片：
+                                <td align="right" height="30">图片：
                                 </td>
                                 <td>
                                     <asp:FileUpload ID="FileUpload1" runat="server" />
@@ -76,7 +76,7 @@
                                 </td>
                             </tr>
                             <tr id="a3" runat="server">
-                                <td width="80" align="right" height="30">
+                                <td align="right" height="30">
                                     租金/售价：
                                 </td>
                                 <td>
@@ -84,70 +84,70 @@
                                 </td>
                             </tr>
                             <tr id="a4" runat="server">
-                                <td width="80" align="right" height="30">面积：
+                                <td align="right" height="30">面积：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="num" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr id="a5" runat="server">
-                                <td width="80" align="right" height="30">电话：
+                                <td align="right" height="30">电话：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="tel" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr id="a6" runat="server">
-                                <td width="80" align="right" height="30">QQ：
+                                <td align="right" height="30">QQ：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="qq" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr id="a7" runat="server">
-                                <td width="80" align="right" height="30">房屋地址：
+                                <td align="right" height="30">房屋地址：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="add" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr id="a8" runat="server">
-                                <td align="right" height="30" width="80">小区：</td>
+                                <td align="right" height="30">小区：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox1" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a9" runat="server">
-                                <td align="right" height="30" width="80">装修：</td>
+                                <td align="right" height="30">装修：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox2" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a10" runat="server">
-                                <td align="right" height="30" width="80">总楼层：</td>
+                                <td align="right" height="30">总楼层：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox3" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a11" runat="server">
-                                <td align="right" height="30" width="80">所在楼层：</td>
+                                <td align="right" height="30">所在楼层：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox4" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a12" runat="server">
-                                <td align="right" width="80" style="height: 20px">朝向：</td>
+                                <td align="right" style="height: 20px">朝向：</td>
                                 <td style="height: 20px">
                                     <asp:TextBox ID="TextBox5" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a13" runat="server">
-                                <td align="right" height="30" width="80">楼龄：</td>
+                                <td align="right" height="30">楼龄：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox6" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr id="a14" runat="server">
-                                <td align="right" height="30" width="80">用途：</td>
+                                <td align="right" height="30">用途：</td>
                                 <td>
                                     <asp:TextBox ID="TextBox7" runat="server" CssClass="login_txt" MaxLength="20"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td width="80" align="right" height="30">介绍：
+                                <td align="right" height="30">介绍：
                                 </td>
                                 <td>
                                     <asp:TextBox ID="intro" runat="server" CssClass="login_txt" MaxLength="20" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox>
