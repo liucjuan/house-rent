@@ -19,6 +19,9 @@ body {
 input{
 	font-size: 14px;
 }
+.none{
+  display: none;
+}
 .container {
 
 }
@@ -86,7 +89,7 @@ input{
 			width:115px;
 			float:left;
 			height:40px;
-			padding-right:11px;
+		  position: relative;
 
 			&:hover{
 				background: #e8400d;
@@ -96,19 +99,33 @@ input{
 				a{
 					color: #e8400d;
 				}
+			  &:before{
+				content: '';
+				position: absolute;
+				width: 1px;
+				background: #FFFFFF;
+				height: 100%;
+				left: -1px;
+			  }
 			}
 
 			a {
 				display:block;
 				color: #FFFFFF;
-				width:115px;
-				height:26px;
+				height:16px;
+			  line-height: 16px;
 				background:none;
 				text-align:center;
-				padding-top:10px;
+				margin-top:12px;
 				font-size:14px;
 				text-decoration:none;
 			}
+
+		  &:not(:last-child){
+			a{
+			  border-right: 1px solid #FFFFFF;
+			}
+		  }
 
 			a:hover {
 				background:none;
@@ -184,7 +201,7 @@ input{
 
 	.left_content {
 		float: left;
-		width: 523px;
+		width: 600px;
 		margin-left: 20px;
 	}
 	.right_content{
@@ -284,8 +301,9 @@ color:#000000;
 }
 .ScntR {
   margin-left: 240px;
-  border: 1px dashed #cccccc;
+  border: 1px solid #dcdcdc;
   overflow: hidden;
+  min-height: 462px;
 
 
   .ScntR_title {

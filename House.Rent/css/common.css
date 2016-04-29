@@ -19,6 +19,9 @@ body {
 input {
   font-size: 14px;
 }
+.none {
+  display: none;
+}
 .top .top_cont {
   width: 1000px;
   margin: 0px auto;
@@ -79,7 +82,7 @@ input {
   width: 115px;
   float: left;
   height: 40px;
-  padding-right: 11px;
+  position: relative;
 }
 .nav .menu li:hover {
   background: #e8400d;
@@ -89,16 +92,27 @@ input {
 .nav .menu li:hover a {
   color: #e8400d;
 }
+.nav .menu li:hover:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  background: #FFFFFF;
+  height: 100%;
+  left: -1px;
+}
 .nav .menu li a {
   display: block;
   color: #FFFFFF;
-  width: 115px;
-  height: 26px;
+  height: 16px;
+  line-height: 16px;
   background: none;
   text-align: center;
-  padding-top: 10px;
+  margin-top: 12px;
   font-size: 14px;
   text-decoration: none;
+}
+.nav .menu li:not(:last-child) a {
+  border-right: 1px solid #FFFFFF;
 }
 .nav .menu li a:hover {
   background: none;
@@ -169,7 +183,7 @@ input {
 }
 .content .left_content {
   float: left;
-  width: 523px;
+  width: 600px;
   margin-left: 20px;
 }
 .content .right_content {
@@ -244,8 +258,9 @@ input {
 }
 .ScntR {
   margin-left: 240px;
-  border: 1px dashed #cccccc;
+  border: 1px solid #dcdcdc;
   overflow: hidden;
+  min-height: 462px;
 }
 .ScntR .ScntR_title {
   height: 30px;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -286,8 +287,6 @@ public class DBHelper
 
     #endregion
 
-
-
     #region 数据更新
     public static ErrorType UpdateData(Dictionary<string, string> updateDic, Dictionary<string, string> whereDic, string tableName)
     {
@@ -298,9 +297,16 @@ public class DBHelper
             List<string> fieldsEquValueList = GetDictionaryKeyAndValue(updateDic);
             if (fieldsEquValueList != null && fieldsEquValueList.Count>0)
             {
-                foreach (string item in fieldsEquValueList)
+                for (int i = 0; i < fieldsEquValueList.Count; i++ )
                 {
-                    fieldsEquValue += item + " ";
+                    if (i == 0)
+                    {
+                        fieldsEquValue += fieldsEquValueList[i];
+                    }
+                    else
+                    {
+                        fieldsEquValue += "," + fieldsEquValueList[i];
+                    }
                 }
             }
         }
@@ -321,7 +327,7 @@ public class DBHelper
             return ErrorType.BadUpdate;
         }
         StringBuilder sql = new StringBuilder();
-        sql.AppendFormat("update {0} set {1} where 1=1 {2}",fieldsEquValue,tableName,where);
+        sql.AppendFormat("update {0} set {1} where 1=1 {2}", tableName,fieldsEquValue, where);
         int count = ExecuteCommand(sql.ToString());
         if (count == 1)
         {
@@ -407,7 +413,7 @@ public class DBHelper
             }
         }
         int sum = pageIndex > 0 ? (pageIndex)*pageSize : 0;
-        sql.AppendFormat("select top {0} * from {1} where 1=1 {2} and {3} not in (select top {4} {3} from {1} order by {3} desc) order by {3} desc", pageSize, tableName, wheres, id, sum);
+        sql.AppendFormat("select top {0} * from {1} where 1=1 {2} order by {3} desc", pageSize, tableName, wheres, id, sum);
         DataSet ds = DBHelper.GetDataSet(sql.ToString());
         if (ds != null)
         {
@@ -508,7 +514,15 @@ public class DBHelper
                 string item = string.Empty;
                 if (dic.TryGetValue(field, out item))
                 {
-                    string value = field + "='" + item+"'";
+                    string value = string.Empty;
+                    if (item.Contains("-"))
+                    {
+                         value = field + "=" + item + "";
+                    }
+                    else
+                    {
+                         value = field + "='" + item + "'";
+                    }
                     result.Add(value);
                 }
             }
@@ -566,4 +580,33 @@ public class DBHelper
         public static string Int = "int";
     } 
     #endregion
+
+    public static T GetClassInfoAndSetValue<T>(T t,DataSet ds)
+    {
+        PropertyInfo[] props = null;
+        try
+        {
+            Type type = typeof(T);
+            object obj = Activator.CreateInstance(type);
+            props = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        }
+        catch (Exception ex)
+        { }
+        if (ds != null && props!=null && props.Length>0)
+        {
+            for (int i = 0; i < ds.Tables[0].Columns.Count; i++)
+            {
+                foreach (PropertyInfo item in props)
+                {
+                    if (item.Name.Equals(ds.Tables[0].Columns[i].ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        SetValueOfClass.SetValue(t,item.Name, ds.Tables[0].Rows[0][i].ToString());
+                        break;
+                    }
+                }
+           
+            }
+        }
+        return default(T);
+    }
 }

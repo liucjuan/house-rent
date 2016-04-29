@@ -3,6 +3,8 @@
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="controls/top.ascx" TagName="top" TagPrefix="uc1" %>
+<%@ Register Src="controls/menuleft.ascx" TagName="menuleft" TagPrefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -16,26 +18,9 @@
     <form id="form1" runat="server">
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
-            <div id="content">
+            <div id="content" class="content">
                 <div class="ScntL">
-                    <div class="Smenu">
-                        <div class="SmenuTitle">
-                            会员中心</div>
-                        <div class="SmenuCnt">
-                            <ul>
-                                <li><a href="member_index.aspx">个人资料</a></li>
-                                <li><a href="member_pwd.aspx">修改密码</a></li>
-                                <%--<li><a href="member_pro_add.aspx">添加交易物品</a></li>--%>
-                               <%-- <li><a href="member_pro_list.aspx">交易物品管理</a></li>--%>
-                              <%--  <li><a href="member_buy_add.aspx">发布求购</a></li>
-                                <li><a href="member_buy_list.aspx">求购信息</a></li>
-                                <li><a href="member_buy_log.aspx">购买记录</a></li>--%>
-                               <%-- <li><a href="member_sales_log.aspx">销售记录</a></li>--%>
-                            </ul>
-                        </div>
-                        <div class="SmenuBg">
-                            <img src="images/lmt_q_b.gif" alt="bg" /></div>
-                    </div>
+                    <uc1:menuleft ID="menuleft1" runat="server" />
                 </div>
                 <div class="ScntR">
                     <div class="ScntR_title">
@@ -44,8 +29,7 @@
                         <span class="ScntR_title2">你现在的位置：<a href="/">首页&nbsp;&gt;&nbsp;</a><a href="member_sales_log.aspx">销售记录</a></span></div>
                     <div class="productsBox">
                         <div class="newLxt0">
-                            <table border="0" cellpadding="0" cellspacing="1" bgcolor="#DEE4FA" style="text-align: center;"
-                                width="90%">
+                            <table border="0" cellpadding="0" cellspacing="1" bgcolor="#DEE4FA" style="text-align: center;" width="100%">
                                 <tr bgcolor="#F7F7FF">
                                     <td height="30">
                                         标题
@@ -118,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <div id="footer">
+            <div id="footer" class="footer">
                 <div class="footerCnt">
                     <p>
                         版权所有：房屋租赁系统网站 <a href="System/ManagerThisWay.aspx" target="_blank">管理员登录</a></p>

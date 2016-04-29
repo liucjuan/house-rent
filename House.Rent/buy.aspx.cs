@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
 
 public partial class buy : System.Web.UI.Page
 {
@@ -42,11 +43,21 @@ public partial class buy : System.Web.UI.Page
                 try
                 {
                     int t = Convert.ToInt32(Request.QueryString["t"]);
-                    string sql = "select pro_cls_pid from pro_cls where pro_cls_id=" + t;
-                    int cls = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
+                  //  string sql = "select pro_cls_pid from pro_cls where pro_cls_id=" + t;
+                  //  int cls = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
+                    //SelectDataObject(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+                    List<string> fieldList = new List<string>();
+                    Dictionary<string, string> whereDic = new Dictionary<string, string>();
+                    fieldList.Add("pro_cls_pid");
+                    whereDic.Add("pro_cls_id", t.ToString());
+                    int cls = Convert.ToInt32(DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls));
                     Bind(cls);
-                    sql = "select pro_cls_name from pro_cls where pro_cls_id=" + t;
-                    string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+
+                    fieldList.Clear();
+                    fieldList.Add("pro_cls_name");
+                    string name = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls).ToString();
+                 //   sql = "select pro_cls_name from pro_cls where pro_cls_id=" + t;
+                  //  string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
                     HyperLink1.Text += "&nbsp;&gt;&nbsp;";
                     HyperLink2.Text = name;
                     HyperLink2.NavigateUrl = "buy.aspx?t=" + t;
@@ -69,19 +80,32 @@ public partial class buy : System.Web.UI.Page
     #region 绑定列表
     private void Bind()
     {
-        string where = " where pro_type=2";
+
+        List<string> fieldList = new List<string>();
+        Dictionary<string, string> whereDic = new Dictionary<string, string>();
+        fieldList.Add("count(*)");
+        whereDic.Add("pro_type","2");
+      //  string where = " where pro_type=2";
         if (Request["cls"] != null)
         {
-            where += " and pro_cls_id in (select pro_cls_id from pro_cls where pro_cls_pid=" + Request.QueryString["cls"] + ")";
+          //  where += " and pro_cls_id in (select pro_cls_id from pro_cls where pro_cls_pid=" + Request.QueryString["cls"] + ")";
+            whereDic.Add("pro_cls_id", "in (select pro_cls_id from pro_cls where pro_cls_pid="+ Request.QueryString["cls"]);
         }
         else if (Request["t"] != null)
         {
-            where += " and pro_cls_id=" + Request.QueryString["t"];
+         //   where += " and pro_cls_id=" + Request.QueryString["t"];
+            whereDic.Add("pro_cls_id", Request.QueryString["t"]);
         }
-        string count = "select count(*) from product" + where;
-        AspNetPager1.RecordCount = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
-        string sql = "select * from product" + where + " order by pro_id desc";
-        CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
+      //  string count = "select count(*) from product" + where;
+
+        int count = DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product);
+        AspNetPager1.RecordCount = count;// Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, count, null));
+
+        fieldList.Clear();
+        DataSet ds= DBHelper.SelectDataSet(fieldList, whereDic, DBConfig.product);
+        DBHelper.BindRepeater(rep_list,ds);
+       // string sql = "select * from product" + where + " order by pro_id desc";
+       // CommonLib.SqlHelper.BindRepeater(rep_list, sql, AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex - 1);
     }
     #endregion
 
@@ -97,16 +121,25 @@ public partial class buy : System.Web.UI.Page
     {
         if (int.Parse(id) > 3)
         {
-            string sql = "select count(*) from product where pro_type=2 and pro_cls_id=" + id;
-            int cout = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
-            return cout.ToString();
+            //string sql = "select count(*) from product where pro_type=2 and pro_cls_id=" + id;
+            //int cout = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
+            //return cout.ToString();
+
+            //SelectDataCount(List<string> fieldList, Dictionary<string, string> whereDic, string tableName)
+            List<string> fieldList = new List<string>();
+            Dictionary<string, string> whereDic = new Dictionary<string, string>();
+            fieldList.Add("count(*)");
+            whereDic.Add("pro_type","2");
+            whereDic.Add("pro_cls_id",id);
+            return DBHelper.SelectDataCount(fieldList, whereDic, DBConfig.product).ToString();
+
         }
         else
         {
-            string sql = "select pro_cls_id from pro_cls where pro_cls_pid=" + id;
-            sql = "select count(*) from product where pro_type=2 and pro_cls_id in (" + sql + ")";
-            int cout = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
-            return cout.ToString();
+            //string sql = "select pro_cls_id from pro_cls where pro_cls_pid=" + id;
+            //sql = "select count(*) from product where pro_type=2 and pro_cls_id in (" + sql + ")";
+            //int cout = Convert.ToInt32(CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null));
+            return TableProductHelper.GetCountNew(id).ToString();
         }
     }
     #endregion
@@ -116,14 +149,24 @@ public partial class buy : System.Web.UI.Page
     {
         if (cls > 0 && cls < 4)
         {
-            string sql = "select pro_cls_name from pro_cls where pro_cls_id=" + cls;
-            string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
+            List<string> fieldList = new List<string>();
+            Dictionary<string, string> whereDic = new Dictionary<string, string>();
+            fieldList.Add("pro_cls_name");
+            whereDic.Add("pro_cls_id", cls.ToString());
+            string name = DBHelper.SelectDataObject(fieldList, whereDic, DBConfig.pro_cls).ToString();
+           // string sql = "select pro_cls_name from pro_cls where pro_cls_id=" + cls;
+           // string name = CommonLib.SqlHelper.ExecuteScalar(con, CommandType.Text, sql, null).ToString();
             hy_cls.Text = name;
             HyperLink1.NavigateUrl = "buy.aspx?cls=" + cls;
             HyperLink1.Text = name;
             hy_cls.NavigateUrl = "buy.aspx?cls=" + cls;
-            sql = "select * from pro_cls where pro_cls_pid=" + cls + " order by pro_cls_id desc";
-            CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
+
+            fieldList.Clear();
+            DataSet ds = DBHelper.SelectDataSet(fieldList, whereDic, DBConfig.pro_cls);
+            DBHelper.BindRepeater(rep_cls,ds);
+
+           // sql = "select * from pro_cls where pro_cls_pid=" + cls + " order by pro_cls_id desc";
+           //CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
         }
         else if (cls == 0)
         {
@@ -131,8 +174,14 @@ public partial class buy : System.Web.UI.Page
             hy_cls.NavigateUrl = "buy.aspx";
             HyperLink1.NavigateUrl = "buy.aspx";
             HyperLink1.Text = "全部";
-            string sql = "select * from pro_cls where pro_cls_pid=0";
-            CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
+            List<string> fieldList = new List<string>();
+            Dictionary<string, string> whereDic = new Dictionary<string, string>();
+            whereDic.Add("pro_cls_id","0");
+            DataSet ds = DBHelper.SelectDataSet(fieldList, whereDic, DBConfig.pro_cls);
+            DBHelper.BindRepeater(rep_cls, ds);
+
+           // string sql = "select * from pro_cls where pro_cls_pid=0";
+           // CommonLib.SqlHelper.BindRepeater(rep_cls, con, CommandType.Text, sql, null);
         }
     }
     #endregion

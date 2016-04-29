@@ -1,15 +1,15 @@
 ﻿@charset "utf-8";
 
-input[type=text]{
-  width: 218px;
-  border-radius: 3px;
-  text-align: center;
-  line-height: 36px;
-  border: 1px solid #dcdcdc;
-  color: #FFFFFF;
-  font-family: "Microsoft Yahei";
-  font-size: 20px;
-}
+//input[type=text]{
+//  width: 218px;
+//  border-radius: 3px;
+//  text-align: center;
+//  line-height: 36px;
+//  border: 1px solid #dcdcdc;
+//  color: #FFFFFF;
+//  font-family: "Microsoft Yahei";
+//  font-size: 20px;
+//}
 
 /* CSS Document */
 .Sub_gsjj
@@ -32,13 +32,30 @@ input[type=text]{
 	color: #000000;
 }
 /*产品展示*/
-.productsBox
-{
-	clear: both;
-	width: 687px;
-	padding-top: 12px;
-	height: auto;
-	padding-bottom: 15px;
+.productsBox {
+  clear: both;
+  padding: 10px;
+
+  select{
+	margin: 10px;
+	border: 1px solid #dddddd;
+	//width: 218px;
+	background: #fff;
+	color: #333;
+	padding: 6px 0 5px 5px;
+	font-family: "Microsoft Yahei";
+	border-radius: 5px;
+  }
+  textarea{
+	margin: 10px;
+	border: 1px solid #dddddd;
+	width: 218px;
+	background: #fff;
+	color: #333;
+	padding: 6px 0 5px 5px;
+	font-family: "Microsoft Yahei";
+	border-radius: 5px;
+  }
 }
 .SproLxt
 {
@@ -120,7 +137,7 @@ input[type=text]{
 }
 /*新闻列表*/
 .newLxt0 {
-  width: 400px;
+  //width: 400px;
   margin: 20px auto;
   dl{
 	padding: 10px 0px;
@@ -329,9 +346,9 @@ input[type=text]{
 	padding: 50px 0px;
 }
 .login_cont{
-	margin-top: 30px;
 	width:350px;
 	height: 300px;
+  margin-top: 40px;
 	background: #FFFFFF;
 	dl{
 		line-height: 60px;
@@ -407,4 +424,192 @@ input[type=text]{
 }
 .pr-5 {
   padding-right: 5px
+}
+
+#slides,
+#slides2,
+#slides3 {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+.slidesjs-navigation {
+  margin-top:3px;
+}
+
+.slidesjs-previous {
+  margin-right: 5px;
+  float: left;
+}
+
+.slidesjs-next {
+  margin-right: 5px;
+  float: left;
+}
+
+.slidesjs-pagination {
+  margin: -30px 0 0;
+  list-style: none;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.slidesjs-pagination li {
+  display: inline-block;
+  height: 18px;
+  width: 25px;
+  text-align: center;
+
+}
+
+.slidesjs-pagination li a {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: -1px;
+  text-indent: -9000px;
+}
+
+.sliderjs-menu{
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  width: 100%;
+  height: 18px;
+  line-height: 16px;
+  z-index: 98;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+
+a:link,
+a:visited {
+  color: #333
+}
+
+a:hover,
+a:active {
+  color: #9e2020
+}
+.bold{ font-weight:bold}
+.gray6,.gray6 a{ color:#666;text-decoration:none}.gray6 a:hover{ color:#05b;text-decoration:none}
+.mt12 {
+  margin-top: 12px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.mt20 {
+  margin-top: 20px
+}
+.mt5, .mtie5 {
+  margin-top: 5px;
+}
+.alingC {
+  text-align: center;
+}
+.agentInfor,.agents-list-con,.banner-nav li a,.boxpic,.boxpic ul,.clear,.fanye .txt,.fanye a,.floating a,.houseList .list,.houseList .list .img img,.lineList,.lineList li .floatl,.note,.qx-list ul li,.qx-list ul li dl dd,.schoolList .list,.schoolList .list .img img,.schoolcard,.search-box .con .shangQuan,.sidebarBox,.sidebarBox .info .wid125,.sidebarBox .info li.mouseover,.special-list,.sprank_list,.sqindex .content,.tabBtnWp,.village,.village dt {
+  overflow: hidden
+}
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f32e2e;
+  padding-right: 4px
+}
+
+.price-list {
+  width: 166px
+}
+
+.price-list .draw-l {
+  width: 166px;
+  height: 400px
+}
+
+.splitline {
+  color: #e3e3e3;
+  font-weight: 400;
+  padding: 0 16px
+}
+
+.houseList {
+  padding: 0 20px 20px;
+  background: #fff;
+  .list{
+	border-bottom: 1px dashed #e3e3e3;
+	padding: 20px 0;
+
+	.img {
+	  position: relative;
+	  z-index: 1;
+
+	  img {
+		width: 250px;
+		height: 180px;
+	  }
+
+	  a {
+		float: left
+	  }
+	}
+
+	.info{
+	  padding-left: 298px;
+	  position: relative;
+
+	  .txt {
+		color: #333;
+		font-size: 14px;
+		font-weight: 700
+	  }
+
+	  &.znxw{
+		padding-left: 10px;
+	  }
+
+	}
+	.title {
+	  font-size: 22px;
+	  font-weight: 700
+	}
+
+  }
+}
+
+.houseList .list .info .moreInfo {
+  position: absolute;
+  _left: 602px;
+  top: 54px;
+  right: 0px;
+  width: 208px
+}
+
+.houseList .list .info .time {
+  display: inline-block;
+  margin: 1px 0 0 2px
+}
+
+.grid{
+  a{
+	color: #0055bb;
+	margin-right: 15px;
+  }
+  th{
+	line-height: 30px;
+  }
+  td{
+	line-height: 30px;
+	text-align: center;
+  }
 }

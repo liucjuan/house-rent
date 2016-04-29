@@ -1,0 +1,105 @@
+﻿html
+{
+	overflow-y:scroll!important; 
+	*overflow-y:scroll;
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #D2E5F4;
+	scrollbar-highlight-color: #D2E5F4;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #EAF7FF;
+	scrollbar-arrow-color: #D2E5F4;
+}
+body
+{
+	margin-left: 0px;
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	background:#ffffff;
+}
+a
+{
+	color: #135294;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover
+{
+	color: #ff6600;
+	text-decoration: underline;
+}
+
+.text_page
+{
+	height: 15px;
+	width: 20px;
+	border: 1px solid #999999;
+	margin: 0px 2px;
+}
+
+.go_page
+{
+	border: 0px;
+}
+
+.grid td
+{
+	background: #FFFFFF;
+	height: 20px;
+	padding-left: 5px;
+}
+
+.top_tr th
+{
+	height: 22px;
+	background:#FFFFFF url(../images/bg.gif);
+}
+
+.text
+{
+	height: 20px;
+	border: 1px solid #999999;
+	padding: 0px 5px;
+	color: #51AADB;
+	font-size: 15px;
+}
+
+.btn_gray1
+{
+	width: 92px;
+	height: 28px;
+	border: 0px;
+	color: Gray;
+	font-weight: bold;
+	cursor: pointer;
+	background: url(../images/icons.gif) 0px -130px;
+}
+
+.btn_gray2
+{
+	width: 68px;
+	height: 26px;
+	border: 0px;
+	color: Gray;
+	font-weight: bold;
+	cursor: pointer;
+	background: url(../images/icons.gif) 0px -255px;
+}
+
+.btn_blue
+{
+	width: 68px;
+	height: 26px;
+	border: 0px;
+	color: #337ABB;
+	font-weight: bold;
+	cursor: pointer;
+	background: url(../images/icons.gif) 0px -160px;
+}
+
+.pl
+{
+	margin:10px 5px 3px 10px;
+}

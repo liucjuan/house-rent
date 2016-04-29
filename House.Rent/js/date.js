@@ -80,8 +80,7 @@ function kong()
         alert("请选择一级分类");
         ddl_yi.focus();
         return false;
-    }
-    
+    }    
     else
     {
         hidclsid.value=ddl_er.value;   

@@ -52,7 +52,7 @@ public partial class System_Sys_Member_Add : System.Web.UI.Page
                 else
                 {
                     dr.Close(); dr.Dispose();
-                    CommonLib.JavaScriptHelper.AlertAndRedirect("数据不存在或已删除", "member_buy_list.apx", Page);
+                    CommonLib.JavaScriptHelper.AlertAndRedirect("数据不存在或已删除", "xw_list.apx", Page);
                 }
             }
         }
@@ -109,7 +109,7 @@ public partial class System_Sys_Member_Add : System.Web.UI.Page
                 try
                 {
                     CommonLib.SqlHelper.ExecuteNonQuery(con, CommandType.Text, sql, null);
-                    CommonLib.JavaScriptHelper.AlertAndRedirect("添加成功", "Sys_Product_List.aspx", Page);
+                    CommonLib.JavaScriptHelper.AlertAndRedirect("添加成功", "xw_List.aspx", Page);
                 }
                 catch
                 {
@@ -152,7 +152,7 @@ public partial class System_Sys_Member_Add : System.Web.UI.Page
                         }
                     }
                     catch { }
-                    CommonLib.JavaScriptHelper.AlertAndRedirect("修改成功", "member_buy_list.aspx", Page);
+                    CommonLib.JavaScriptHelper.AlertAndRedirect("修改成功", "xw_List.aspx", Page);
                 }
                 catch
                 {

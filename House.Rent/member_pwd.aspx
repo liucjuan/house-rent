@@ -1,10 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="member_pwd.aspx.cs" Inherits="member_pwd" %>
 
 <%@ Register Src="controls/top.ascx" TagName="top" TagPrefix="uc1" %>
+<%@ Register Src="controls/menuleft.ascx" TagName="menuleft" TagPrefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>无标题页</title>
     <link href="css/common.css" rel="stylesheet" type="text/css" />
@@ -48,16 +49,7 @@
             <uc1:top ID="Top1" runat="server" />
             <div id="content" class="content">
                 <div class="ScntL">
-                    <div class="Smenu">
-                        <div class="SmenuTitle">
-                            会员中心</div>
-                        <div class="SmenuCnt">
-                            <ul>
-                                <li><a href="member_index.aspx">个人资料</a></li>
-                                <li><a href="member_pwd.aspx">修改密码</a></li>                                
-                            </ul>
-                        </div>
-                    </div>
+                    <uc1:menuleft ID="menuleft1" runat="server" />
                 </div>
                 <div class="ScntR">
                     <div class="ScntR_title">

@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="member_index.aspx.cs" Inherits="member_index" %>
 
 <%@ Register Src="controls/top.ascx" TagName="top" TagPrefix="uc1" %>
+<%@ Register Src="controls/menuleft.ascx" TagName="menuleft" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -16,20 +17,7 @@
             <uc1:top ID="Top1" runat="server" />
             <div id="content" class="content">
                 <div class="ScntL">
-                    <div class="Smenu">
-                        <div class="SmenuTitle">
-                            会员中心
-                        </div>
-                        <div class="SmenuCnt">
-                            <ul>
-                                <li><a href="member_index.aspx">个人资料</a></li>
-                                <li><a href="member_pwd.aspx">修改密码</a></li>
-                                <li><a href="System/yz_Add.aspx?ss=aa" target="_blank">发布预租信息</a></li>
-                                <li><a href="System/yz_List.aspx?ss=yy" target="_blank">预租信息管理</a></li>
-                                <li><a href="ckhf.aspx">查看留言回复</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <uc1:menuleft ID="menuleft1" runat="server" />
                 </div>
                 <div class="ScntR">
                     <div class="ScntR_title">

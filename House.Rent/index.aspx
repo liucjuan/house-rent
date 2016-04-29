@@ -2,10 +2,9 @@
 
 <%@ Register Src="controls/top.ascx" TagName="top" TagPrefix="uc1" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>首页</title>
     <%--<link href="css/style.css" rel="stylesheet" type="text/css" />--%>
@@ -13,7 +12,24 @@
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
 
-    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <%--<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>--%>
+    <script src="js/jquery-1.12.2.js" type="text/javascript"></script>
+    <script src="js/jquery.slides.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#slides2').slidesjs({
+                width: 1000,
+                height: 200,
+                navigation: false,
+                start: 3,
+                play: {
+                    auto: true
+                }
+            });
+        });
+
+    </script>
 
 
 </head>
@@ -21,7 +37,15 @@
     <form id="form1" runat="server">
         <div id="container">
             <uc1:top ID="Top1" runat="server" />
-            <div id="content" class="content">
+            <div id="content" class="content">          
+                <div id="slides2">
+                        <img src="images/img/1432605356624.jpg" alt="" />
+                        <img src="images/img/1450337416483_000.jpg" alt="" />
+                        <img src="images/img/1453874574041.jpg" alt="" />
+                        <%--<a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+                        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>--%>
+                    </div>
+                      
                 <div class="CntL">
                     <div class="newBox">
                         <div class="newTitle">
@@ -47,6 +71,7 @@
                     </div>
                 </div>
                 <div class="CntR">
+                    
                     <div class="CntR_Top">
                         <div class="gsjjBox">
                             <div class="gsjjTitle">
@@ -54,7 +79,7 @@
                                     <a href="supply.aspx?cls=3" target="_blank">站内新闻</a>
                                 </div>
                                 <div class="more">
-                                    <a href="supply.aspx?cls=2" target="_blank">
+                                    <a href="supply.aspx?cls=3" target="_blank">
                                         <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>
@@ -76,10 +101,10 @@
                         <div class="recruitBox">
                             <div class="reTitle">
                                 <div class="gsjjTitle1">
-                                    <a href="supply-display.aspx?cls=1" target="_blank">出租房源</a>
+                                    <a href="supply.aspx?cls=2" target="_blank">房源出售</a>
                                 </div>
                                 <div class="more">
-                                    <a href="buy.aspx" target="_blank">
+                                    <a href="supply.aspx?cls=2" target="_blank">
                                         <img src="images/icon3.gif" alt="more" /></a>
                                 </div>
                             </div>
